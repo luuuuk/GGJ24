@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7xvq4nrs3b6o"
-path="res://.godot/imported/Dungeon Connecting Hall Animated Battlemap.jpeg-4049b34e6063b649f566ca3ff67d1c5a.ctex"
+uid="uid://tiqnepu0n62x"
+path="res://.godot/imported/skeleton_right2.png-16fafbe24e446b6625b9c06ea2d7f794.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Dungeon Connecting Hall Animated Battlemap.jpeg"
-dest_files=["res://.godot/imported/Dungeon Connecting Hall Animated Battlemap.jpeg-4049b34e6063b649f566ca3ff67d1c5a.ctex"]
+source_file="res://assets/skeleton_right2.png"
+dest_files=["res://.godot/imported/skeleton_right2.png-16fafbe24e446b6625b9c06ea2d7f794.ctex"]
 
 [params]
 

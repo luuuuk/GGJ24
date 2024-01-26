@@ -1,22 +1,110 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwyaqunyedsv"]
+[gd_scene load_steps=20 format=3 uid="uid://bwyaqunyedsv"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ctbmr"]
-[ext_resource type="Texture2D" uid="uid://cu484kcv0em5c" path="res://assets/player-run1.png" id="1_gcai4"]
+[ext_resource type="Texture2D" uid="uid://cyn7wiyf0w0yp" path="res://assets/skeleton1.png" id="2_ooyda"]
+[ext_resource type="Texture2D" uid="uid://dqf3oucin5wl7" path="res://assets/skeleton2.png" id="3_mtuj0"]
+[ext_resource type="Texture2D" uid="uid://c1g4odtmky00d" path="res://assets/skeleton3.png" id="4_1loat"]
+[ext_resource type="Texture2D" uid="uid://cdk0lijm8dbp8" path="res://assets/skeleton4.png" id="5_l4x1e"]
+[ext_resource type="Texture2D" uid="uid://bdkcf0dqnnl60" path="res://assets/skeleton_left1.png" id="6_bhsga"]
+[ext_resource type="Texture2D" uid="uid://dqh265hm0g276" path="res://assets/skeleton_left2.png" id="7_4l75n"]
+[ext_resource type="Texture2D" uid="uid://c2ksrcb06o8qj" path="res://assets/skeleton_left3.png" id="8_xe8ca"]
+[ext_resource type="Texture2D" uid="uid://dmr0ksu088kp4" path="res://assets/skeleton_left4.png" id="9_ncaso"]
+[ext_resource type="Texture2D" uid="uid://bh2owkrdyxdcu" path="res://assets/skeleton_right1.png" id="10_sk50y"]
+[ext_resource type="Texture2D" uid="uid://tiqnepu0n62x" path="res://assets/skeleton_right2.png" id="11_txt3e"]
+[ext_resource type="Texture2D" uid="uid://dmukxrpibl33x" path="res://assets/skeleton_right3.png" id="12_lfs6f"]
+[ext_resource type="Texture2D" uid="uid://o6lqpqwe3dd7" path="res://assets/skeleton_right4.png" id="13_qknvc"]
+[ext_resource type="Texture2D" uid="uid://btcgwcmd50qgt" path="res://assets/skeleton_up1.png" id="14_pml4y"]
+[ext_resource type="Texture2D" uid="uid://dudeqb00uden0" path="res://assets/skeleton_up2.png" id="15_rvmnp"]
+[ext_resource type="Texture2D" uid="uid://dwapmebmua02t" path="res://assets/skeleton_up3.png" id="16_658va"]
+[ext_resource type="Texture2D" uid="uid://dc5wwol60wpda" path="res://assets/skeleton_up4.png" id="17_r6ecq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a4idp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ooyda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mtuj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1loat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l4x1e")
+}],
+"loop": true,
+"name": &"move_down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_bhsga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4l75n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xe8ca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ncaso")
+}],
+"loop": true,
+"name": &"move_left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_sk50y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_txt3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lfs6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qknvc")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_pml4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rvmnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_658va")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_r6ecq")
+}],
+"loop": true,
+"name": &"move_up",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spypp"]
-size = Vector2(12, 13)
+size = Vector2(17.3469, 20.4082)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(0, -1)
 scale = Vector2(1.4, 1.4)
 script = ExtResource("1_ctbmr")
 
-[node name="Player-run1" type="Sprite2D" parent="."]
-position = Vector2(-9.53674e-07, 0)
-scale = Vector2(1.4, 1.4)
-texture = ExtResource("1_gcai4")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.14286, 2.85714)
+scale = Vector2(1.90179, 2.01339)
+sprite_frames = SubResource("SpriteFrames_a4idp")
+animation = &"move_up"
+frame_progress = 0.859212
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
+position = Vector2(0.714286, 1.42857)
 scale = Vector2(1.4, 1.4)
 shape = SubResource("RectangleShape2D_spypp")

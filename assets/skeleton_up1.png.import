@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc73uoa0i6444"
-path="res://.godot/imported/The _Bent Coin_ Brothel & Surrounding City [45 x 45], Morvold Press _ Jeff Todd.jpeg-1e2db6a8a9c08490cfe5a691d8067b64.ctex"
+uid="uid://btcgwcmd50qgt"
+path="res://.godot/imported/skeleton_up1.png-615cd113e6b80addf18aedbbf376875a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/The _Bent Coin_ Brothel & Surrounding City [45 x 45], Morvold Press _ Jeff Todd.jpeg"
-dest_files=["res://.godot/imported/The _Bent Coin_ Brothel & Surrounding City [45 x 45], Morvold Press _ Jeff Todd.jpeg-1e2db6a8a9c08490cfe5a691d8067b64.ctex"]
+source_file="res://assets/skeleton_up1.png"
+dest_files=["res://.godot/imported/skeleton_up1.png-615cd113e6b80addf18aedbbf376875a.ctex"]
 
 [params]
 
