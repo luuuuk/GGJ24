@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7tf3qq3u3f26"]
+
+[ext_resource type="Script" path="res://scenes/computer_puzzle/computer_assembly.gd" id="1_uu7wf"]
+[ext_resource type="Texture2D" uid="uid://cfavjfqkd6m0r" path="res://assets/motherboard-icon.svg" id="1_xqi2t"]
+[ext_resource type="PackedScene" uid="uid://utmlonu4t08m" path="res://scenes/computer_puzzle/drop_zone.tscn" id="2_jphor"]
+[ext_resource type="Texture2D" uid="uid://cjjnnw5ncpaxy" path="res://assets/cpu-svgrepo-com.svg" id="3_udopi"]
+[ext_resource type="Texture2D" uid="uid://vbv8dwybcxkp" path="res://assets/tech-ram-svgrepo-com.svg" id="4_2yr4f"]
+[ext_resource type="Texture2D" uid="uid://brk4qqol4yxc2" path="res://assets/gpu-svgrepo-com.svg" id="5_vw0qj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cn7tt"]
+size = Vector2(488.55, 472)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blc3y"]
+size = Vector2(684.304, 436.201)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1btl"]
+size = Vector2(896.772, 331.036)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_uu7wf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -13.0
+offset_top = -5.0
+offset_right = 1174.0
+offset_bottom = 672.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 620.0
+offset_top = 38.0
+offset_right = 1148.0
+offset_bottom = 560.0
+texture = ExtResource("1_xqi2t")
+
+[node name="start_zone_cpu" parent="." instance=ExtResource("2_jphor")]
+position = Vector2(113, 88)
+
+[node name="start_zone_ram" parent="." instance=ExtResource("2_jphor")]
+position = Vector2(113, 282)
+
+[node name="start_zone_gpu" parent="." instance=ExtResource("2_jphor")]
+position = Vector2(120, 496)
+
+[node name="CPU" type="Sprite2D" parent="."]
+position = Vector2(254, 85)
+scale = Vector2(0.262, 0.25)
+texture = ExtResource("3_udopi")
+
+[node name="Area2D" type="Area2D" parent="CPU"]
+position = Vector2(-264, -240)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CPU/Area2D"]
+position = Vector2(264, 240)
+shape = SubResource("RectangleShape2D_cn7tt")
+
+[node name="RAM" type="Sprite2D" parent="."]
+position = Vector2(980, 92)
+scale = Vector2(0.227969, 0.139844)
+texture = ExtResource("4_2yr4f")
+
+[node name="Area2D" type="Area2D" parent="RAM"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RAM/Area2D"]
+position = Vector2(0, 3.57538)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_blc3y")
+
+[node name="GPU" type="Sprite2D" parent="."]
+position = Vector2(719, 203)
+rotation = 0.994838
+scale = Vector2(0.236302, 0.264717)
+texture = ExtResource("5_vw0qj")
+
+[node name="Area2D" type="Area2D" parent="GPU"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GPU/Area2D"]
+position = Vector2(-35.8279, 37.4236)
+rotation = 0.523599
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_d1btl")
