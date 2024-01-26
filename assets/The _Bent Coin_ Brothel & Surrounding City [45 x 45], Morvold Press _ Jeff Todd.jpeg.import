@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq28073cn8dry"
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://dc73uoa0i6444"
+path="res://.godot/imported/The _Bent Coin_ Brothel & Surrounding City [45 x 45], Morvold Press _ Jeff Todd.jpeg-1e2db6a8a9c08490cfe5a691d8067b64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+source_file="res://assets/The _Bent Coin_ Brothel & Surrounding City [45 x 45], Morvold Press _ Jeff Todd.jpeg"
+dest_files=["res://.godot/imported/The _Bent Coin_ Brothel & Surrounding City [45 x 45], Morvold Press _ Jeff Todd.jpeg-1e2db6a8a9c08490cfe5a691d8067b64.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

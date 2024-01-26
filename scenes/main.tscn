@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://boan08aug2m4w"]
+
+[ext_resource type="Texture2D" uid="uid://b78nvlhbs606s" path="res://assets/Prove your humanity.jpeg" id="1_yugbk"]
+[ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_50bgd"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(332, 205)
+
+[node name="WorldMap" type="StaticBody2D" parent="."]
+collision_layer = 3
+
+[node name="TextureRect" type="TextureRect" parent="WorldMap"]
+offset_left = -748.0
+offset_top = -529.0
+offset_right = 874.0
+offset_bottom = 596.0
+texture = ExtResource("1_yugbk")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldMap"]
+build_mode = 1
+polygon = PackedVector2Array(-185, -177, -187, -366, -103, -364, -101, -45, -39, -38, -44, -373, 86, -366, 86, -330, 376, -323, 378, -364, 517, -367, 508, -198, 613, -182, 615, -145, 398, -137, 396, 60, 346, 67, 412, 71, 412, -129, 615, -130, 627, -84, 485, -86, 481, -6, 635, -14, 629, 71, 490, 76, 490, 142, 636, 146, 633, 235, 488, 235, 494, 294, 636, 294, 640, 363, 405, 363, 410, 149, 349, 151, 364, 208, 300, 221, 323, 267, 399, 263, 390, 367, 330, 361, 276, 447, 335, 392, 676, 399, 672, -403, -502, -399, -518, 155, -185, 151, -176, 376, 189, 376, -9, 360, 23, 301, -41, 287, -132, 290, -126, 165, -2, 228, 39, 174, -23, 148, -26, 21, -458, 23, -459, -362, -385, -364, -394, -168, -283, -157, -271, -79, -180, -73)
+
+[node name="Player" parent="." instance=ExtResource("2_50bgd")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
