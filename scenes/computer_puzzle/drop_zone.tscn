@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://utmlonu4t08m"]
+
+[ext_resource type="Script" path="res://scenes/computer_puzzle/drop_zone.gd" id="1_i517i"]
+
+[node name="drop_zone" type="Marker2D" groups=["zone"]]
+script = ExtResource("1_i517i")
