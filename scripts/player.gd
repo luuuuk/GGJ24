@@ -36,4 +36,6 @@ func _process(delta):
 	velocity = MAX_SPEED * velocity_percent
 	move_and_slide()
 	
-	# Pick something up if colliding
+	# Detect collision and change level
+	
+

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpnb2mdgos5dg"]
+
+[ext_resource type="Script" path="res://scripts/levelChangeTrigger.gd" id="1_1msio"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l58vs"]
+size = Vector2(358, 326)
+
+[node name="ChangeLevelTrigger" type="Area2D"]
+script = ExtResource("1_1msio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l58vs")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
