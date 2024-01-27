@@ -13,4 +13,4 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
-		get_tree().change_scene_to_file("res://scenes/computer_puzzle/test_zones.tscn")
+		get_tree().change_scene_to_file("res://scenes/computer_puzzle/computer_assembly.tscn")

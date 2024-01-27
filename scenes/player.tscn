@@ -119,7 +119,6 @@ position = Vector2(1.42857, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(2.5, 3.21428)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_skei4")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
