@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://boan08aug2m4w"]
+[gd_scene load_steps=8 format=3 uid="uid://boan08aug2m4w"]
 
 [ext_resource type="Texture2D" uid="uid://b78nvlhbs606s" path="res://assets/Prove your humanity.jpeg" id="1_yugbk"]
 [ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_50bgd"]
 [ext_resource type="PackedScene" uid="uid://bpnb2mdgos5dg" path="res://scenes/levelChangeTrigger.tscn" id="2_mbxwu"]
-[ext_resource type="Script" path="res://scripts/FollowCam.gd" id="4_40gjk"]
+[ext_resource type="Script" path="res://scripts/followCam.gd" id="4_40gjk"]
+[ext_resource type="PackedScene" uid="uid://bobnnio6u4ain" path="res://scenes/items/key.tscn" id="5_ea2yu"]
+[ext_resource type="PackedScene" uid="uid://c5vrrj4hsx1fg" path="res://scenes/items/coin.tscn" id="6_ppy07"]
+[ext_resource type="PackedScene" uid="uid://da5se2fpjfdm1" path="res://scenes/inventory/inventory.tscn" id="7_wg7mv"]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(787, 556)
@@ -31,6 +34,45 @@ polygon = PackedVector2Array(1152, -369, 1156, 745, 529, 745, 1187, 764, 1180, -
 [node name="ChangeLevelTrigger" parent="." instance=ExtResource("2_mbxwu")]
 position = Vector2(-549, 423)
 
+[node name="Key" parent="." instance=ExtResource("5_ea2yu")]
+position = Vector2(-428, -337)
+
+[node name="Coin" parent="." instance=ExtResource("6_ppy07")]
+position = Vector2(797, 522)
+
+[node name="Coin2" parent="." instance=ExtResource("6_ppy07")]
+position = Vector2(832, 478)
+
+[node name="Coin3" parent="." instance=ExtResource("6_ppy07")]
+position = Vector2(787, 483)
+
+[node name="Coin4" parent="." instance=ExtResource("6_ppy07")]
+position = Vector2(752, 486)
+
+[node name="Coin5" parent="." instance=ExtResource("6_ppy07")]
+position = Vector2(787, 442)
+
+[node name="Coin6" parent="." instance=ExtResource("6_ppy07")]
+position = Vector2(742, 447)
+
+[node name="Coin7" parent="." instance=ExtResource("6_ppy07")]
+position = Vector2(679, 523)
+
+[node name="Coin8" parent="." instance=ExtResource("6_ppy07")]
+position = Vector2(714, 479)
+
+[node name="Coin9" parent="." instance=ExtResource("6_ppy07")]
+position = Vector2(669, 484)
+
+[node name="Coin10" parent="." instance=ExtResource("6_ppy07")]
+position = Vector2(639, 487)
+
+[node name="Coin11" parent="." instance=ExtResource("6_ppy07")]
+position = Vector2(674, 443)
+
+[node name="Coin12" parent="." instance=ExtResource("6_ppy07")]
+position = Vector2(629, 448)
+
 [node name="Player" parent="." instance=ExtResource("2_50bgd")]
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
@@ -38,3 +80,7 @@ limit_left = 0
 limit_top = 0
 script = ExtResource("4_40gjk")
 map = NodePath("../../MapBody/TextureRect")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("7_wg7mv")]
