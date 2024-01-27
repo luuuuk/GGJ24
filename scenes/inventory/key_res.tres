@@ -7,3 +7,5 @@
 script = ExtResource("1_gnuju")
 name = "key"
 texture = ExtResource("2_err7m")
+description = Array[String](["Oddly shaped object.", "Made of metal, looks like it could get stuck in tight spaces..."])
+pickUpLines = Array[String](["You pick up a metal fragment!", "Oddly shaped, but might as well be useful!"])

@@ -11,7 +11,3 @@ func _ready():
 	limit_right = mapSize.size[0] + mapSize.position[0]
 	limit_bottom = mapSize.size[1] + mapSize.position[1]
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

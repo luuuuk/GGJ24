@@ -41,13 +41,6 @@ func connectSlots():
 		slot.pressed.connect(callable)
 
 
-func onInteractableClicked(interactable):
-	if itemInHand:
-		remove_child(itemInHand)
-		itemInHand = null
-		# slot.insert(item)
-
-
 func onSlotClicked(slot):
 	
 	if slot.isEmpty():

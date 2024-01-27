@@ -31,3 +31,12 @@ func takeItem():
 
 func isEmpty():
 	return !itemStackGui
+
+
+func _on_gui_input(event):
+	pass
+	#if event is InputEventMouseButton && event.button_index == 2:
+		#if itemStackGui:
+			#if itemStackGui.inventorySlot:
+				#DialogManager.startDialog(get_global_mouse_position() , itemStackGui.inventorySlot.item.description)
+		

@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://iivl3bp8poak"]
+
+[ext_resource type="Script" path="res://scripts/TextBox.gd" id="1_wss5i"]
+[ext_resource type="Texture2D" uid="uid://c8ggp2j28oasi" path="res://assets/inventory/InventorySimple.png" id="2_5vknc"]
+
+[node name="TextBox" type="MarginContainer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -102.0
+offset_top = -208.0
+offset_right = 103.0
+offset_bottom = -121.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_wss5i")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_5vknc")
+region_rect = Rect2(0, 0, 19, 19)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "some text"
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
