@@ -1,38 +1,38 @@
 [gd_scene load_steps=22 format=3 uid="uid://bwyaqunyedsv"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ctbmr"]
-[ext_resource type="Texture2D" uid="uid://cyn7wiyf0w0yp" path="res://assets/player/skeleton1.png" id="2_12aax"]
 [ext_resource type="Resource" uid="uid://416dftc5u8m0" path="res://scenes/inventory/playerInventory.tres" id="2_au7sv"]
-[ext_resource type="Texture2D" uid="uid://dqf3oucin5wl7" path="res://assets/player/skeleton2.png" id="3_vgafj"]
-[ext_resource type="Texture2D" uid="uid://c1g4odtmky00d" path="res://assets/player/skeleton3.png" id="4_dquew"]
-[ext_resource type="Texture2D" uid="uid://cdk0lijm8dbp8" path="res://assets/player/skeleton4.png" id="5_rdknq"]
-[ext_resource type="Texture2D" uid="uid://bdkcf0dqnnl60" path="res://assets/player/skeleton_left1.png" id="6_rwwv0"]
-[ext_resource type="Texture2D" uid="uid://dqh265hm0g276" path="res://assets/player/skeleton_left2.png" id="7_gl4ko"]
-[ext_resource type="Texture2D" uid="uid://c2ksrcb06o8qj" path="res://assets/player/skeleton_left3.png" id="8_7vyyf"]
-[ext_resource type="Texture2D" uid="uid://dmr0ksu088kp4" path="res://assets/player/skeleton_left4.png" id="9_vaw65"]
-[ext_resource type="Texture2D" uid="uid://bh2owkrdyxdcu" path="res://assets/player/skeleton_right1.png" id="10_cppla"]
-[ext_resource type="Texture2D" uid="uid://tiqnepu0n62x" path="res://assets/player/skeleton_right2.png" id="11_6ln5y"]
-[ext_resource type="Texture2D" uid="uid://dmukxrpibl33x" path="res://assets/player/skeleton_right3.png" id="12_ayrr3"]
-[ext_resource type="Texture2D" uid="uid://o6lqpqwe3dd7" path="res://assets/player/skeleton_right4.png" id="13_fh5y3"]
-[ext_resource type="Texture2D" uid="uid://btcgwcmd50qgt" path="res://assets/player/skeleton_up1.png" id="14_t3yud"]
-[ext_resource type="Texture2D" uid="uid://dudeqb00uden0" path="res://assets/player/skeleton_up2.png" id="15_dwyb2"]
-[ext_resource type="Texture2D" uid="uid://dwapmebmua02t" path="res://assets/player/skeleton_up3.png" id="16_eijs0"]
-[ext_resource type="Texture2D" uid="uid://dc5wwol60wpda" path="res://assets/player/skeleton_up4.png" id="17_jnyav"]
+[ext_resource type="Texture2D" uid="uid://haq3fb10yxhy" path="res://assets/player/Alian_Walking_Towards-1.png" id="3_3j4ws"]
+[ext_resource type="Texture2D" uid="uid://djw43i5ge80hg" path="res://assets/player/Alian_Walking_Towards-2.png" id="4_86tjc"]
+[ext_resource type="Texture2D" uid="uid://svn0dubyx8yn" path="res://assets/player/Alian_Walking_Towards-3.png" id="5_youxl"]
+[ext_resource type="Texture2D" uid="uid://dejdjn1fqnxln" path="res://assets/player/Alian_Walking_Towards-4.png" id="6_5eb4w"]
+[ext_resource type="Texture2D" uid="uid://bwv7la4din4og" path="res://assets/player/Alien_Walking_Left-1.png" id="7_lk7to"]
+[ext_resource type="Texture2D" uid="uid://8p8w20ok7bhq" path="res://assets/player/Alien_Walking_Left-2.png" id="8_5q1qm"]
+[ext_resource type="Texture2D" uid="uid://m2rxc123m3jt" path="res://assets/player/Alien_Walking_Left-3.png" id="9_bqo4t"]
+[ext_resource type="Texture2D" uid="uid://datipxva25q1k" path="res://assets/player/Alien_Walking_Left-4.png" id="10_g7riw"]
+[ext_resource type="Texture2D" uid="uid://b8ks17sv6vcim" path="res://assets/player/Alien_Walking_Right-1.png" id="11_bl2cy"]
+[ext_resource type="Texture2D" uid="uid://bgjchi7gw6m0f" path="res://assets/player/Alien_Walking_Right-2.png" id="12_sdyuy"]
+[ext_resource type="Texture2D" uid="uid://c5g5df70h48b2" path="res://assets/player/Alien_Walking_Right-3.png" id="13_ae587"]
+[ext_resource type="Texture2D" uid="uid://bqvta7gcwvnrk" path="res://assets/player/Alien_Walking_Right-4.png" id="14_1jjua"]
+[ext_resource type="Texture2D" uid="uid://8fbycpmrnxka" path="res://assets/player/Alien_Walking_Away-1.png" id="15_vpxk5"]
+[ext_resource type="Texture2D" uid="uid://bo3e5qvx8vdpg" path="res://assets/player/Alien_Walking_Away-2.png" id="16_xo74o"]
+[ext_resource type="Texture2D" uid="uid://cv4m7puwc6df" path="res://assets/player/Alien_Walking_Away-3.png" id="17_6eufr"]
+[ext_resource type="Texture2D" uid="uid://2cfrte4a0udc" path="res://assets/player/Alien_Walking_Away-4.png" id="18_mk0km"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a4idp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_12aax")
+"texture": ExtResource("3_3j4ws")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_vgafj")
+"texture": ExtResource("4_86tjc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_dquew")
+"texture": ExtResource("5_youxl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_rdknq")
+"texture": ExtResource("6_5eb4w")
 }],
 "loop": true,
 "name": &"move_down",
@@ -40,16 +40,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_rwwv0")
+"texture": ExtResource("7_lk7to")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_gl4ko")
+"texture": ExtResource("8_5q1qm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_7vyyf")
+"texture": ExtResource("9_bqo4t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_vaw65")
+"texture": ExtResource("10_g7riw")
 }],
 "loop": true,
 "name": &"move_left",
@@ -57,16 +57,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_cppla")
+"texture": ExtResource("11_bl2cy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_6ln5y")
+"texture": ExtResource("12_sdyuy")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_ayrr3")
+"texture": ExtResource("13_ae587")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_fh5y3")
+"texture": ExtResource("14_1jjua")
 }],
 "loop": true,
 "name": &"move_right",
@@ -74,16 +74,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("14_t3yud")
+"texture": ExtResource("15_vpxk5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_dwyb2")
+"texture": ExtResource("16_xo74o")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_eijs0")
+"texture": ExtResource("17_6eufr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_jnyav")
+"texture": ExtResource("18_mk0km")
 }],
 "loop": true,
 "name": &"move_up",
@@ -91,35 +91,35 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spypp"]
-size = Vector2(17.3469, 20.4082)
+size = Vector2(17.3469, 26.1722)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skei4"]
-size = Vector2(26.4286, 29.2857)
+size = Vector2(20.9138, 29.7651)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-position = Vector2(0, -1)
+position = Vector2(2, -22)
 scale = Vector2(1.4, 1.4)
 script = ExtResource("1_ctbmr")
 inventory = ExtResource("2_au7sv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.14286, 2.85714)
-scale = Vector2(1.90179, 2.01339)
+scale = Vector2(0.057, 0.06)
 sprite_frames = SubResource("SpriteFrames_a4idp")
 animation = &"move_up"
-frame_progress = 0.163951
+frame_progress = 0.304533
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.714286, 1.42857)
-scale = Vector2(1.4, 1.4)
+position = Vector2(-3.57143, 15.7908)
+scale = Vector2(2.505, 2.505)
 shape = SubResource("RectangleShape2D_spypp")
 
 [node name="HurtBox" type="Area2D" parent="."]
 position = Vector2(1.42857, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(2.5, 3.21428)
-scale = Vector2(1, 1)
+position = Vector2(-4.64285, 16.6107)
+scale = Vector2(2.22, 2.22)
 shape = SubResource("RectangleShape2D_skei4")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
