@@ -1,15 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://boan08aug2m4w"]
+[gd_scene load_steps=13 format=3 uid="uid://boan08aug2m4w"]
 
 [ext_resource type="Texture2D" uid="uid://j06q8vkoi4dr" path="res://assets/basemap.png" id="1_ilrd8"]
 [ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_50bgd"]
 [ext_resource type="PackedScene" uid="uid://bpnb2mdgos5dg" path="res://scenes/levelChangeTrigger.tscn" id="2_mbxwu"]
 [ext_resource type="Script" path="res://scripts/followCam.gd" id="4_40gjk"]
 [ext_resource type="PackedScene" uid="uid://bobnnio6u4ain" path="res://scenes/items/key.tscn" id="5_ea2yu"]
+[ext_resource type="PackedScene" uid="uid://dykil5l1a53l2" path="res://scenes/items/croissant.tscn" id="5_uy1ij"]
+[ext_resource type="Script" path="res://scripts/inventory/inventoryItem.gd" id="6_pkixr"]
 [ext_resource type="PackedScene" uid="uid://c5vrrj4hsx1fg" path="res://scenes/items/coin.tscn" id="6_ppy07"]
 [ext_resource type="PackedScene" uid="uid://da5se2fpjfdm1" path="res://scenes/inventory/inventory.tscn" id="7_wg7mv"]
+[ext_resource type="Texture2D" uid="uid://i20nqvxhig5g" path="res://assets/items/croissant_icon.png" id="7_yqgdg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jshdq"]
 size = Vector2(2780.62, 628)
+
+[sub_resource type="Resource" id="Resource_x4jh0"]
+script = ExtResource("6_pkixr")
+name = "croissant"
+texture = ExtResource("7_yqgdg")
+description = Array[String](["Greasy plant and animal based ingridients.", "Nutritious!"])
+pickUpLines = Array[String](["Noice!"])
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(787, 556)
@@ -61,7 +71,7 @@ polygon = PackedVector2Array(-2737, -3612, -2027, -3601, -2022, -3276, -2321, -3
 polygon = PackedVector2Array(-1883, -3580, -1872, -3361, -1696, -3260, -1600, -3356, -1691, -3580)
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="MapBody"]
-polygon = PackedVector2Array(-2746, 662, -2714, 376, -2530, 291, -2445, 184, -2340, 133, -2260, 51, -2128, 111, -2100, 214, -2057, 322, -1958, 342, -1881, 259, -1802, 237, -1736, 327, -1674, 319, -1507, 237, -1465, 126, -1412, 21, -1387, 30, -1346, 186, -1203, 153, -1153, 39, -1081, 70, -1128, 225, -1069, 286, -922, 195, -822, 169, -796, 96, -723, 103, -726, 196, -639, 144, -642, 32, -593, -1, -566, 132, -408, 129, -381, 39, -301, 55, -356, 178, -326, 202, -269, 79, -172, -15, 34, 51, 74, 124, 132, 97, 203, 141, 411, 307, 411, 644)
+polygon = PackedVector2Array(-2746, 662, -2714, 376, -2530, 291, -2445, 184, -2340, 133, -2260, 51, -2128, 111, -2100, 214, -2057, 322, -1958, 342, -1881, 259, -1802, 237, -1736, 327, -1674, 319, -1507, 237, -1465, 126, -1412, 21, -1387, 30, -1346, 186, -1203, 153, -1153, 39, -1081, 70, -1128, 225, -1069, 286, -922, 195, -822, 169, -796, 96, -723, 103, -726, 196, -639, 144, -607, 137, -581, 135, -566, 132, -408, 129, -393, 144, -366, 170, -356, 178, -326, 202, -224, 148, -165, 144, -15, 138, 74, 124, 132, 97, 203, 141, 411, 307, 411, 644)
 
 [node name="ChangeLevelTrigger" parent="." instance=ExtResource("2_mbxwu")]
 position = Vector2(537, 619)
@@ -106,7 +116,13 @@ position = Vector2(674, 443)
 [node name="Coin12" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(629, 448)
 
+[node name="croissant" parent="." instance=ExtResource("5_uy1ij")]
+position = Vector2(568, -811)
+scale = Vector2(0.28, 0.28)
+itemRes = SubResource("Resource_x4jh0")
+
 [node name="Player" parent="." instance=ExtResource("2_50bgd")]
+scale = Vector2(3.305, 3.305)
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
 limit_left = 0

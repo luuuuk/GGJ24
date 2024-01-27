@@ -20,7 +20,6 @@ func _on_body_entered(body):
 		
 		if !itemSlots.is_empty():
 			var fullItems =  itemSlots.filter(func(slot): return slot.item.name == "key")
-			print(fullItems)
 			if fullItems.is_empty():
 				DialogManager.startDialog(get_global_mouse_position(), failureLines)
 			else:

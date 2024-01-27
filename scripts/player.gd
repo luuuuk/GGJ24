@@ -34,5 +34,16 @@ func _process(delta):
 
 
 func _on_hurt_box_area_entered(area):
+	
 	if area.has_method("collect"):
 		area.collect(inventory)
+
+		var itemSlots = inventory.slots.filter(func(slot): return slot.item)
+		
+		if !itemSlots.is_empty():
+			var fullItems =  itemSlots.filter(func(slot): return slot.item.name == "croissant")
+			if !fullItems.is_empty():
+				DialogManager.startDialog(get_global_mouse_position(), ["I could've dropped my croissant!"])
+				
+				
+
