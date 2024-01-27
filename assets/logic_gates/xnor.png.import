@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vbv8dwybcxkp"
-path="res://.godot/imported/tech-ram-svgrepo-com.svg-b95a80fbf27f58720b476e8f2573e80e.ctex"
+uid="uid://ch1bcjwq1yhsy"
+path="res://.godot/imported/xnor.png-7562f7f02e157e891c95dbe347a78644.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tech-ram-svgrepo-com.svg"
-dest_files=["res://.godot/imported/tech-ram-svgrepo-com.svg-b95a80fbf27f58720b476e8f2573e80e.ctex"]
+source_file="res://assets/logic_gates/xnor.png"
+dest_files=["res://.godot/imported/xnor.png-7562f7f02e157e891c95dbe347a78644.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

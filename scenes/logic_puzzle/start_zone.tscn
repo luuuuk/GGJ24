@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cncu1nw7pdp3n"]
+
+[ext_resource type="Texture2D" uid="uid://bied1ax7xx0s1" path="res://assets/logic_gates/empty_slot2.png" id="1_6xj76"]
+[ext_resource type="Script" path="res://scripts/drop_zone.gd" id="1_bnlju"]
+
+[node name="Marker2D" type="Marker2D" groups=["zone"]]
+script = ExtResource("1_bnlju")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = -65.0
+offset_top = -65.0
+offset_right = 65.0
+offset_bottom = 65.0
+texture = ExtResource("1_6xj76")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -48.0
+offset_top = 28.0
+offset_right = 46.0
+offset_bottom = 68.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[center]AND[/center]"

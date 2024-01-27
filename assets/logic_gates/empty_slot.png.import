@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjjnnw5ncpaxy"
-path="res://.godot/imported/cpu-svgrepo-com.svg-1abcf4543228a1d717b86d5355e9318b.ctex"
+uid="uid://du6uxyxa4r7yt"
+path="res://.godot/imported/empty_slot.png-a7182c29ca102c0f24410a3a8d8f03ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cpu-svgrepo-com.svg"
-dest_files=["res://.godot/imported/cpu-svgrepo-com.svg-1abcf4543228a1d717b86d5355e9318b.ctex"]
+source_file="res://assets/logic_gates/empty_slot.png"
+dest_files=["res://.godot/imported/empty_slot.png-a7182c29ca102c0f24410a3a8d8f03ce.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

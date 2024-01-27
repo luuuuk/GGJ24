@@ -1,0 +1,498 @@
+[gd_scene load_steps=12 format=3 uid="uid://jn2dj4pbfdcr"]
+
+[ext_resource type="Texture2D" uid="uid://cq73yr2mdteoc" path="res://assets/blueprint_background.png" id="1_lu8oh"]
+[ext_resource type="Script" path="res://scripts/logic_puzzle/logic_puzzle.gd" id="1_m7l4y"]
+[ext_resource type="Texture2D" uid="uid://bjqb8k3lrbkfi" path="res://assets/logic_gates/and.png" id="2_sy06f"]
+[ext_resource type="Texture2D" uid="uid://cmo4ucgax0xcj" path="res://assets/logic_gates/or.png" id="5_w48jy"]
+[ext_resource type="Texture2D" uid="uid://vkbiicgre32r" path="res://assets/logic_gates/xor.png" id="6_ch5x8"]
+[ext_resource type="PackedScene" uid="uid://ce2ycl7pemnw1" path="res://scenes/logic_puzzle/input_btn.tscn" id="9_ovrei"]
+[ext_resource type="PackedScene" uid="uid://b31uqyfh8idow" path="res://scenes/logic_puzzle/output_lbl.tscn" id="10_27kub"]
+[ext_resource type="PackedScene" uid="uid://utmlonu4t08m" path="res://scenes/drop_zone.tscn" id="10_nqqwg"]
+[ext_resource type="PackedScene" uid="uid://cdx1h22jcwre0" path="res://scenes/logic_puzzle/logic_component.tscn" id="11_1ye73"]
+[ext_resource type="Script" path="res://scripts/logic_puzzle/output_lbl_gate.gd" id="11_f16yj"]
+[ext_resource type="PackedScene" uid="uid://cncu1nw7pdp3n" path="res://scenes/logic_puzzle/start_zone.tscn" id="12_521i2"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_m7l4y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 652.0
+texture = ExtResource("1_lu8oh")
+expand_mode = 2
+
+[node name="b_btn" parent="." instance=ExtResource("9_ovrei")]
+offset_left = 41.0
+offset_top = 144.0
+offset_right = 56.0
+offset_bottom = 169.0
+
+[node name="a_btn" parent="." instance=ExtResource("9_ovrei")]
+offset_left = 41.0
+offset_top = 116.0
+offset_right = 56.0
+offset_bottom = 141.0
+
+[node name="cin_btn" parent="." instance=ExtResource("9_ovrei")]
+offset_left = 342.0
+offset_top = 27.0
+offset_right = 357.0
+offset_bottom = 52.0
+
+[node name="logic_grid" type="Node2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="logic_grid"]
+position = Vector2(-50, -43)
+points = PackedVector2Array(114, 174, 281, 174)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D3" type="Line2D" parent="logic_grid"]
+position = Vector2(-13, 7)
+points = PackedVector2Array(132, 125, 132, 142)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D6" type="Line2D" parent="logic_grid"]
+position = Vector2(255, -32)
+points = PackedVector2Array(79, 174, 292, 174)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D11" type="Line2D" parent="logic_grid"]
+position = Vector2(119, -32)
+points = PackedVector2Array(288, 151, 288, 170)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D10" type="Line2D" parent="logic_grid"]
+position = Vector2(119, -5)
+points = PackedVector2Array(288, 151, 288, 242)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D14" type="Line2D" parent="logic_grid"]
+position = Vector2(208, 211)
+points = PackedVector2Array(208, 130, 208, 182, 73, 182, 73, 210)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D15" type="Line2D" parent="logic_grid"]
+position = Vector2(-21, 342)
+points = PackedVector2Array(291, 180, 291, 228)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D9" type="Line2D" parent="logic_grid"]
+position = Vector2(140, -5)
+points = PackedVector2Array(288, 147, 288, 242)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D12" type="Line2D" parent="logic_grid"]
+position = Vector2(483, -43)
+points = PackedVector2Array(166, 174, 252, 174)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D7" type="Line2D" parent="logic_grid"]
+position = Vector2(255, -55)
+points = PackedVector2Array(292, 175, 98, 175, 98, 110)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D2" type="Line2D" parent="logic_grid"]
+position = Vector2(-50, -21)
+points = PackedVector2Array(114, 174, 281, 174)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D4" type="Line2D" parent="logic_grid"]
+position = Vector2(-13, 71)
+points = PackedVector2Array(132, 87, 132, 166)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D13" type="Line2D" parent="logic_grid"]
+position = Vector2(-3, 275)
+points = PackedVector2Array(132, 65, 132, 119, 262, 119, 262, 146)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D5" type="Line2D" parent="logic_grid"]
+position = Vector2(7, 67)
+points = PackedVector2Array(132, 88, 132, 170)
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="And2" type="Sprite2D" parent="logic_grid"]
+visible = false
+position = Vector2(179, 300)
+rotation = 1.5708
+texture = ExtResource("2_sy06f")
+
+[node name="Xor2" type="Sprite2D" parent="logic_grid"]
+visible = false
+position = Vector2(333, 154)
+texture = ExtResource("6_ch5x8")
+
+[node name="And3" type="Sprite2D" parent="logic_grid"]
+visible = false
+position = Vector2(467, 300)
+rotation = 1.5708
+texture = ExtResource("2_sy06f")
+
+[node name="Or2" type="Sprite2D" parent="logic_grid"]
+visible = false
+position = Vector2(320, 484)
+rotation = 1.5708
+texture = ExtResource("5_w48jy")
+
+[node name="Xor3" type="Sprite2D" parent="logic_grid"]
+visible = false
+position = Vector2(648, 143)
+texture = ExtResource("6_ch5x8")
+
+[node name="a" type="RichTextLabel" parent="logic_grid"]
+offset_left = 65.0
+offset_top = 98.0
+offset_right = 86.0
+offset_bottom = 140.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[color=black]A[/color]"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="b" type="RichTextLabel" parent="logic_grid"]
+offset_left = 63.0
+offset_top = 150.0
+offset_right = 92.0
+offset_bottom = 205.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[color=black]B[/color]"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="carrry_in" type="RichTextLabel" parent="logic_grid"]
+offset_left = 359.0
+offset_top = 47.0
+offset_right = 522.0
+offset_bottom = 89.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[color=black]Cin[/color]"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="carrry_out" type="RichTextLabel" parent="logic_grid"]
+offset_left = 274.0
+offset_top = 542.0
+offset_right = 346.0
+offset_bottom = 584.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[color=black]Cout[/color]"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="result" type="RichTextLabel" parent="logic_grid"]
+offset_left = 652.0
+offset_top = 98.0
+offset_right = 815.0
+offset_bottom = 140.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[color=black]Result[/color]"
+fit_content = true
+metadata/_edit_use_anchors_ = true
+
+[node name="drop_zone" parent="." instance=ExtResource("10_nqqwg")]
+position = Vector2(129, 288)
+
+[node name="drop_zone3" parent="." instance=ExtResource("10_nqqwg")]
+position = Vector2(417, 288)
+
+[node name="drop_zone4" parent="." instance=ExtResource("10_nqqwg")]
+position = Vector2(270, 472)
+
+[node name="drop_zone5" parent="." instance=ExtResource("10_nqqwg")]
+position = Vector2(598, 131)
+
+[node name="drop_zone2" parent="." instance=ExtResource("10_nqqwg")]
+position = Vector2(283, 142)
+
+[node name="node_and5" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_and4" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_and3" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_and2" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_and" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_or5" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_or4" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_or3" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_or2" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_or" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_nand5" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_nand4" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_nand3" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_nand2" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_nand" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_nor5" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_nor4" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_nor3" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_nor2" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_nor" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_xor5" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_xor4" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_xor3" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_xor2" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_xor" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_xnor5" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_xnor4" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_xnor3" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_xnor2" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="node_xnor" parent="." instance=ExtResource("11_1ye73")]
+
+[node name="start_nand" parent="." instance=ExtResource("12_521i2")]
+
+[node name="start_or" parent="." instance=ExtResource("12_521i2")]
+
+[node name="start_nor" parent="." instance=ExtResource("12_521i2")]
+
+[node name="start_xnor" parent="." instance=ExtResource("12_521i2")]
+
+[node name="start_xor" parent="." instance=ExtResource("12_521i2")]
+
+[node name="start_and" parent="." instance=ExtResource("12_521i2")]
+
+[node name="output_lbl" parent="." instance=ExtResource("10_27kub")]
+offset_left = 143.0
+offset_top = 212.0
+offset_right = 165.0
+offset_bottom = 242.0
+
+[node name="output_lbl2" parent="." instance=ExtResource("10_27kub")]
+offset_left = 104.0
+offset_top = 212.0
+offset_right = 126.0
+offset_bottom = 242.0
+
+[node name="output_lbl3" parent="." instance=ExtResource("10_27kub")]
+offset_left = 134.0
+offset_top = 335.0
+offset_right = 156.0
+offset_bottom = 365.0
+script = ExtResource("11_f16yj")
+
+[node name="output_lbl15" parent="." instance=ExtResource("10_27kub")]
+offset_left = 738.0
+offset_top = 116.0
+offset_right = 760.0
+offset_bottom = 146.0
+
+[node name="output_lbl14" parent="." instance=ExtResource("10_27kub")]
+offset_left = 535.0
+offset_top = 139.0
+offset_right = 557.0
+offset_bottom = 169.0
+
+[node name="output_lbl13" parent="." instance=ExtResource("10_27kub")]
+offset_left = 535.0
+offset_top = 93.0
+offset_right = 557.0
+offset_bottom = 123.0
+
+[node name="output_lbl12" parent="." instance=ExtResource("10_27kub")]
+offset_left = 264.0
+offset_top = 565.0
+offset_right = 286.0
+offset_bottom = 595.0
+
+[node name="output_lbl11" parent="." instance=ExtResource("10_27kub")]
+offset_left = 285.0
+offset_top = 397.0
+offset_right = 307.0
+offset_bottom = 427.0
+
+[node name="output_lbl10" parent="." instance=ExtResource("10_27kub")]
+offset_left = 244.0
+offset_top = 396.0
+offset_right = 266.0
+offset_bottom = 426.0
+
+[node name="output_lbl9" parent="." instance=ExtResource("10_27kub")]
+offset_left = 401.0
+offset_top = 335.0
+offset_right = 423.0
+offset_bottom = 365.0
+
+[node name="output_lbl8" parent="." instance=ExtResource("10_27kub")]
+offset_left = 431.0
+offset_top = 212.0
+offset_right = 453.0
+offset_bottom = 242.0
+
+[node name="output_lbl7" parent="." instance=ExtResource("10_27kub")]
+offset_left = 393.0
+offset_top = 212.0
+offset_right = 415.0
+offset_bottom = 242.0
+
+[node name="output_lbl6" parent="." instance=ExtResource("10_27kub")]
+offset_left = 337.0
+offset_top = 139.0
+offset_right = 359.0
+offset_bottom = 169.0
+
+[node name="output_lbl5" parent="." instance=ExtResource("10_27kub")]
+offset_left = 217.0
+offset_top = 104.0
+offset_right = 239.0
+offset_bottom = 134.0
+
+[node name="output_lbl4" parent="." instance=ExtResource("10_27kub")]
+offset_left = 217.0
+offset_top = 150.0
+offset_right = 239.0
+offset_bottom = 180.0
+
+[node name="ItemList" type="ItemList" parent="."]
+offset_left = 817.0
+offset_top = 21.0
+offset_right = 1128.0
+offset_bottom = 272.0
+allow_search = false
+auto_height = true
+item_count = 45
+max_columns = 5
+same_column_width = true
+fixed_column_width = 55
+item_0/text = "Cin"
+item_0/selectable = false
+item_1/text = "A"
+item_1/selectable = false
+item_2/text = "B"
+item_2/selectable = false
+item_3/text = "Result"
+item_3/selectable = false
+item_4/text = "Cout"
+item_4/selectable = false
+item_5/text = "0"
+item_5/selectable = false
+item_6/text = "0"
+item_6/selectable = false
+item_7/text = "0"
+item_7/selectable = false
+item_8/text = "0"
+item_8/selectable = false
+item_9/text = "0"
+item_9/selectable = false
+item_10/text = "0"
+item_10/selectable = false
+item_11/text = "0"
+item_11/selectable = false
+item_12/text = "1"
+item_12/selectable = false
+item_13/text = "1"
+item_13/selectable = false
+item_14/text = "0"
+item_14/selectable = false
+item_15/text = "0"
+item_15/selectable = false
+item_16/text = "1"
+item_16/selectable = false
+item_17/text = "0"
+item_17/selectable = false
+item_18/text = "1"
+item_18/selectable = false
+item_19/text = "0"
+item_19/selectable = false
+item_20/text = "0"
+item_20/selectable = false
+item_21/text = "1"
+item_21/selectable = false
+item_22/text = "1"
+item_22/selectable = false
+item_23/text = "0"
+item_23/selectable = false
+item_24/text = "1"
+item_24/selectable = false
+item_25/text = "1"
+item_25/selectable = false
+item_26/text = "0"
+item_26/selectable = false
+item_27/text = "0"
+item_27/selectable = false
+item_28/text = "1"
+item_28/selectable = false
+item_29/text = "0"
+item_29/selectable = false
+item_30/text = "1"
+item_30/selectable = false
+item_31/text = "0"
+item_31/selectable = false
+item_32/text = "1"
+item_32/selectable = false
+item_33/text = "0"
+item_33/selectable = false
+item_34/text = "1"
+item_34/selectable = false
+item_35/text = "1"
+item_35/selectable = false
+item_36/text = "1"
+item_36/selectable = false
+item_37/text = "0"
+item_37/selectable = false
+item_38/text = "0"
+item_38/selectable = false
+item_39/text = "1"
+item_39/selectable = false
+item_40/text = "1"
+item_40/selectable = false
+item_41/text = "1"
+item_41/selectable = false
+item_42/text = "1"
+item_42/selectable = false
+item_43/text = "1"
+item_43/selectable = false
+item_44/text = "1"
+item_44/selectable = false
+
+[connection signal="pressed" from="b_btn" to="." method="_on_b_btn_pressed"]
+[connection signal="pressed" from="a_btn" to="." method="_on_a_btn_pressed"]
+[connection signal="pressed" from="cin_btn" to="." method="_on_cin_btn_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5da33pxh5e8p"]
 
-[ext_resource type="PackedScene" uid="uid://utmlonu4t08m" path="res://scenes/computer_puzzle/drop_zone.tscn" id="1_vppt1"]
+[ext_resource type="PackedScene" uid="uid://utmlonu4t08m" path="res://scenes/drop_zone.tscn" id="1_vppt1"]
 [ext_resource type="PackedScene" uid="uid://cf3o7c4o4yn5l" path="res://scenes/computer_puzzle/power_cord.tscn" id="2_uclt3"]
 
 [node name="Node2D" type="Node2D"]

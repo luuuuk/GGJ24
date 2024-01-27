@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca7rsf5ppliey"
-path="res://.godot/imported/power-button-svgrepo-com.svg-60f29abaf7df3a820340e333c9463dd5.ctex"
+uid="uid://brk4qqol4yxc2"
+path="res://.godot/imported/gpu-svgrepo-com.svg-6d21ffa2409da2010426637cbb36f68d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/power-button-svgrepo-com.svg"
-dest_files=["res://.godot/imported/power-button-svgrepo-com.svg-60f29abaf7df3a820340e333c9463dd5.ctex"]
+source_file="res://assets/computer_hardware/old/gpu-svgrepo-com.svg"
+dest_files=["res://.godot/imported/gpu-svgrepo-com.svg-6d21ffa2409da2010426637cbb36f68d.ctex"]
 
 [params]
 

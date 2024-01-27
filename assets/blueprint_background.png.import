@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfavjfqkd6m0r"
-path="res://.godot/imported/motherboard-icon.svg-744363b2379c5df422b2c912e3e3575b.ctex"
+uid="uid://cq73yr2mdteoc"
+path="res://.godot/imported/blueprint_background.png-6b32096387f2a741c50b662504318627.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/motherboard-icon.svg"
-dest_files=["res://.godot/imported/motherboard-icon.svg-744363b2379c5df422b2c912e3e3575b.ctex"]
+source_file="res://assets/blueprint_background.png"
+dest_files=["res://.godot/imported/blueprint_background.png-6b32096387f2a741c50b662504318627.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

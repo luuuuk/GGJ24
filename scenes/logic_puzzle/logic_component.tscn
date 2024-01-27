@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdx1h22jcwre0"]
+
+[ext_resource type="Texture2D" uid="uid://bjqb8k3lrbkfi" path="res://assets/logic_gates/and.png" id="1_5wssb"]
+[ext_resource type="Script" path="res://scripts/logic_puzzle/logic_component.gd" id="1_ijykm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4rop0"]
+radius = 49.2544
+
+[node name="Node2D" type="Node2D" groups=["logic_component"]]
+script = ExtResource("1_ijykm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5wssb")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+shape = SubResource("CircleShape2D_4rop0")
+
+[connection signal="input_event" from="Sprite2D/Area2D" to="." method="_on_area_2d_input_event"]

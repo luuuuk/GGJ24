@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brk4qqol4yxc2"
-path="res://.godot/imported/gpu-svgrepo-com.svg-3ee7be7b2ab88169aeedfafdcee55523.ctex"
+uid="uid://vhvtufpx8d"
+path="res://.godot/imported/nand.png-67ac51cadbc9f60aaaa9ce7265af96e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gpu-svgrepo-com.svg"
-dest_files=["res://.godot/imported/gpu-svgrepo-com.svg-3ee7be7b2ab88169aeedfafdcee55523.ctex"]
+source_file="res://assets/logic_gates/nand.png"
+dest_files=["res://.godot/imported/nand.png-67ac51cadbc9f60aaaa9ce7265af96e1.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
