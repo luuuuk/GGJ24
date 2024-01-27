@@ -15,13 +15,8 @@ const failureLines: Array[String] = [
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
-
 		var itemSlots = inventory.slots.filter(func(slot): return slot.item)
-		
 		if !itemSlots.is_empty():
 			var fullItems =  itemSlots.filter(func(slot): return slot.item.name == "key")
-			if fullItems.is_empty():
-				DialogManager.startDialog(get_global_mouse_position(), failureLines)
-			else:
-				DialogManager.startDialog(get_global_mouse_position(), successLines)
+			if !fullItems.is_empty():
 				get_tree().change_scene_to_file("res://scenes/computer_puzzle/computer_assembly.tscn")

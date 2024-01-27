@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
-const MAX_SPEED = 300
+const MAX_SPEED = 400
 
 var velocity_percent = Vector2.ZERO
-var acceleration = 30
+var acceleration = 40
 
 @onready var _animated_sprite = $AnimatedSprite2D
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
 @export var inventory: Inventory
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,3 +48,9 @@ func _on_hurt_box_area_entered(area):
 				
 				
 
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("click"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return

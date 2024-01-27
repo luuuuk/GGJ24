@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bwyaqunyedsv"]
+[gd_scene load_steps=23 format=3 uid="uid://bwyaqunyedsv"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_ctbmr"]
 [ext_resource type="Resource" uid="uid://416dftc5u8m0" path="res://scenes/inventory/playerInventory.tres" id="2_au7sv"]
@@ -96,6 +96,9 @@ size = Vector2(17.3469, 26.1722)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skei4"]
 size = Vector2(20.9138, 29.7651)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_35l27"]
+radius = 31.5015
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(2, -22)
 scale = Vector2(1.4, 1.4)
@@ -121,5 +124,15 @@ position = Vector2(1.42857, 0)
 position = Vector2(-4.64285, 16.6107)
 scale = Vector2(2.22, 2.22)
 shape = SubResource("RectangleShape2D_skei4")
+
+[node name="Direction" type="Marker2D" parent="."]
+
+[node name="ActionableFinder" type="Area2D" parent="Direction"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
+position = Vector2(-1.42857, 15.7143)
+shape = SubResource("CircleShape2D_35l27")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

@@ -34,9 +34,13 @@ func isEmpty():
 
 
 func _on_gui_input(event):
-	pass
-	#if event is InputEventMouseButton && event.button_index == 2:
-		#if itemStackGui:
-			#if itemStackGui.inventorySlot:
-				#DialogManager.startDialog(get_global_mouse_position() , itemStackGui.inventorySlot.item.description)
+	if Input.is_action_just_pressed("rightClick"):
+		if itemStackGui:
+			if itemStackGui.inventorySlot:
+				if itemStackGui.inventorySlot.item.name == "croissant":
+					DialogueManager.show_example_dialogue_balloon(load("res://dialogue/croissantFind.dialogue"), "start")
+				elif itemStackGui.inventorySlot.item.name == "key":
+					DialogueManager.show_example_dialogue_balloon(load("res://dialogue/key.dialogue"), "start")
+				elif itemStackGui.inventorySlot.item.name == "coin":
+					DialogueManager.show_example_dialogue_balloon(load("res://dialogue/coin.dialogue"), "start")
 		

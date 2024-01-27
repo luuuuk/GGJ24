@@ -1,0 +1,17 @@
+~ start
+
+Zaraq: A small yet enigmatic device has been uncovered!
+
+Zaraq: A slender mechanism of purpose, a conduit to hidden realms perhaps?
+
+set key_status = "has"
+
+=> END
+
+
+~ pick_key
+
+Zaraq's singular eye flickered with curiosity as it assessed the metallic artifact's peculiar features.
+set key_status = "has"
+
+=> END

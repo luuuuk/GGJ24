@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://t6jlqkj0c7sd"
+path="res://.godot/imported/croissantFind.dialogue-f1fd8075a4168a51103caa3e6f8b6448.tres"
+
+[deps]
+
+source_file="res://dialogue/croissantFind.dialogue"
+dest_files=["res://.godot/imported/croissantFind.dialogue-f1fd8075a4168a51103caa3e6f8b6448.tres"]
+
+[params]
+
+defaults=true

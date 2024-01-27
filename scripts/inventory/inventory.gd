@@ -19,6 +19,7 @@ func update():
 			itemStackGui = ItemStackGuiClass.instantiate()
 			slots[i].insert(itemStackGui)
 			
+			
 		itemStackGui.inventorySlot = inventorySlot
 		itemStackGui.update()
 

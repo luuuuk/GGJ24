@@ -1,0 +1,8 @@
+~ start
+
+if key_status == "has":
+	Zaraq: The way is shut. Might a human-made object be capable of giving passage?
+else:
+	Zaraq: The way is shut. Might a human-made object be capable of giving passage?
+
+=> END

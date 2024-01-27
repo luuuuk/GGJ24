@@ -8,8 +8,6 @@
 script = ExtResource("2_e82f8")
 name = "croissant"
 texture = ExtResource("3_goph6")
-description = Array[String](["A greasy mixture of flour and animal sourced ingridients.", "Soft to the touch..."])
-pickUpLines = Array[String](["mhh..."])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdp1l"]
 resource_local_to_scene = true
