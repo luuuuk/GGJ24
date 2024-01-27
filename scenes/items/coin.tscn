@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5vrrj4hsx1fg"]
+
+[ext_resource type="PackedScene" uid="uid://dp11fpeekoxc7" path="res://scenes/items/collectable.tscn" id="1_q6i5h"]
+[ext_resource type="Texture2D" uid="uid://bi8a5r82g8etw" path="res://assets/items/coin1.png" id="2_p3gie"]
+[ext_resource type="Resource" uid="uid://2pron7eiole0" path="res://scenes/inventory/coin_res.tres" id="2_sqteq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nf7e"]
+resource_local_to_scene = true
+
+[node name="Coin" instance=ExtResource("1_q6i5h")]
+itemRes = ExtResource("2_sqteq")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_6nf7e")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_p3gie")

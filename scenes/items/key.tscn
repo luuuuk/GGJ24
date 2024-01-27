@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bobnnio6u4ain"]
+
+[ext_resource type="PackedScene" uid="uid://dp11fpeekoxc7" path="res://scenes/items/collectable.tscn" id="1_oyohi"]
+[ext_resource type="Texture2D" uid="uid://rbt7bqfot7j8" path="res://assets/items/key0.png" id="2_584ll"]
+[ext_resource type="Resource" uid="uid://dkgjswfqrdw54" path="res://scenes/inventory/key_res.tres" id="2_b5v1y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6eyl"]
+resource_local_to_scene = true
+size = Vector2(15.5, 14)
+
+[node name="Key" instance=ExtResource("1_oyohi")]
+itemRes = ExtResource("2_b5v1y")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-0.75, 1)
+shape = SubResource("RectangleShape2D_k6eyl")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(1.305, 1.305)
+texture = ExtResource("2_584ll")

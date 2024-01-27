@@ -7,6 +7,8 @@ var acceleration = 30
 
 @onready var _animated_sprite = $AnimatedSprite2D
 
+@export var inventory: Inventory
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -35,7 +37,8 @@ func _process(delta):
 	
 	velocity = MAX_SPEED * velocity_percent
 	move_and_slide()
-	
-	# Detect collision and change level
-	
 
+
+func _on_hurt_box_area_entered(area):
+	if area.has_method("collect"):
+		area.collect(inventory)
