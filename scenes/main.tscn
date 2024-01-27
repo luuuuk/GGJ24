@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://boan08aug2m4w"]
+[gd_scene load_steps=9 format=3 uid="uid://boan08aug2m4w"]
 
-[ext_resource type="Texture2D" uid="uid://b78nvlhbs606s" path="res://assets/Prove your humanity.jpeg" id="1_yugbk"]
+[ext_resource type="Texture2D" uid="uid://j06q8vkoi4dr" path="res://assets/basemap.png" id="1_ilrd8"]
 [ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_50bgd"]
 [ext_resource type="PackedScene" uid="uid://bpnb2mdgos5dg" path="res://scenes/levelChangeTrigger.tscn" id="2_mbxwu"]
 [ext_resource type="Script" path="res://scripts/followCam.gd" id="4_40gjk"]
 [ext_resource type="PackedScene" uid="uid://bobnnio6u4ain" path="res://scenes/items/key.tscn" id="5_ea2yu"]
 [ext_resource type="PackedScene" uid="uid://c5vrrj4hsx1fg" path="res://scenes/items/coin.tscn" id="6_ppy07"]
 [ext_resource type="PackedScene" uid="uid://da5se2fpjfdm1" path="res://scenes/inventory/inventory.tscn" id="7_wg7mv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jshdq"]
+size = Vector2(2780.62, 628)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(787, 556)
@@ -15,27 +18,56 @@ position = Vector2(787, 556)
 collision_layer = 3
 
 [node name="TextureRect" type="TextureRect" parent="MapBody"]
-offset_left = -748.0
-offset_top = -529.0
-offset_right = 874.0
-offset_bottom = 596.0
-texture = ExtResource("1_yugbk")
+offset_left = -7393.0
+offset_top = -11259.0
+offset_right = 907.0
+offset_bottom = 624.0
+texture = ExtResource("1_ilrd8")
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="MapBody"]
-build_mode = 1
-polygon = PackedVector2Array(-185, -177, -187, -366, -103, -364, -101, -45, -39, -38, -44, -373, 86, -366, 86, -330, 376, -323, 378, -364, 517, -367, 508, -198, 613, -182, 615, -145, 398, -137, 396, 60, 346, 67, 412, 71, 412, -129, 615, -130, 627, -84, 485, -86, 481, -6, 635, -14, 629, 71, 490, 76, 490, 142, 636, 146, 633, 235, 488, 235, 494, 294, 636, 294, 640, 363, 405, 363, 410, 149, 349, 151, 364, 208, 300, 221, 323, 267, 399, 263, 390, 367, 330, 361, 276, 447, 335, 392, 676, 399, 672, -403, -502, -399, -518, 155, -185, 151, -176, 376, 189, 376, -9, 360, 23, 301, -41, 287, -132, 290, -126, 165, -2, 228, 39, 174, -23, 148, -26, 21, -458, 23, -459, -362, -385, -364, -394, -168, -283, -157, -271, -79, -180, -73)
+position = Vector2(-7393, -11259)
+polygon = PackedVector2Array(8055, 9223, 8043, 9490, 7978, 9494, 7967, 9744, 7976.27, 9796.23, 8056, 9809, 8041, 9988, 6177, 9966, 6173, 10085, 5796, 10203, 5694, 10242, 5642, 10447, 5620, 10601, 5710, 10578, 5669, 10911, 4957, 10949, 5012, 10415, 5211, 10297, 5190, 10017, 4694, 10051, 4694, 9631, 4903, 9701, 4892, 9937, 5187, 9930, 5184, 9727, 5391, 9653, 5457, 9631, 5686, 9631, 5656, 9962, 6406, 9881, 6402, 9602, 5906, 9597, 5929, 8323, 6044.71, 8299.31, 6081, 8137, 6151, 8107, 6202, 8144, 6249, 8188, 6432, 8220, 6473, 8424, 6543, 8429, 6529, 9146, 6469, 9146, 6461, 9542, 6885, 9534, 6970, 9191, 7717, 9218, 7784, 9139, 7836, 9226)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(867, -10954, 863, -57, 845, 277, 930, 315, 911, 624, -7428, 625, -7357, -11248, 787, -11218, 1112, -11267, 487, -11408, -7569, -11399, -7660, 768, 1050, 768, 955, -11424, 955, -11424)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBody"]
+position = Vector2(-5300.31, 405)
+shape = SubResource("RectangleShape2D_jshdq")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="MapBody"]
-position = Vector2(-283, -156)
-build_mode = 1
-polygon = PackedVector2Array(1152, -369, 1156, 745, 529, 745, 1187, 764, 1180, -395, -502, -399, -481, 776, 154, 783, 696, 737, -445, 737, -459, -362)
+polygon = PackedVector2Array(-1056, -1030, -1091, -814, -1377, -624, -1401, -237, 21, -198, 185, -458, 166, -720, 348, -734, 321, -1027)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-751, -2283, -89, -2272, -190, -2610, -393, -2598, -364, -2709, -220, -2798, -229, -3067, -250, -3120, -334, -3126, -370, -3077, -463, -3062, -426, -2918, -635, -2905, -645, -2771, -604, -2567)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(925, -3206, -746, -3249, -741, -3591, 925, -3607)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-3560, -248, -3405, -841, -2876, -937, -2876, -1247, -3405, -1359, -3416, -1621, -4537, -1605, -4478, -1220, -3955, -1252, -3928, -1119, -4115, -937, -4473, -862, -4489, -345)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-2113, -3009, -2129, -2854, -2358, -2806, -2348, -2443, -2102, -2197, -2107, -1898, -2775, -1946, -2743, -3062)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-885, -3276, -879, -3564, -1515, -3553, -1467, -3297, -1114, -3217)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-2737, -3612, -2027, -3601, -2022, -3276, -2321, -3238, -2444, -3393, -2615, -3383, -2588, -3270, -2785, -3244)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-1883, -3580, -1872, -3361, -1696, -3260, -1600, -3356, -1691, -3580)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-2746, 662, -2714, 376, -2530, 291, -2445, 184, -2340, 133, -2260, 51, -2128, 111, -2100, 214, -2057, 322, -1958, 342, -1881, 259, -1802, 237, -1736, 327, -1674, 319, -1507, 237, -1465, 126, -1412, 21, -1387, 30, -1346, 186, -1203, 153, -1153, 39, -1081, 70, -1128, 225, -1069, 286, -922, 195, -822, 169, -796, 96, -723, 103, -726, 196, -639, 144, -642, 32, -593, -1, -566, 132, -408, 129, -381, 39, -301, 55, -356, 178, -326, 202, -269, 79, -172, -15, 34, 51, 74, 124, 132, 97, 203, 141, 411, 307, 411, 644)
 
 [node name="ChangeLevelTrigger" parent="." instance=ExtResource("2_mbxwu")]
-position = Vector2(-549, 423)
+position = Vector2(-2148, -2631)
 
 [node name="Key" parent="." instance=ExtResource("5_ea2yu")]
-position = Vector2(-428, -337)
+position = Vector2(-1563, -970)
 
 [node name="Coin" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(797, 522)
