@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://vkbiicgre32r" path="res://assets/logic_gates/xor.png" id="6_ch5x8"]
 [ext_resource type="PackedScene" uid="uid://ce2ycl7pemnw1" path="res://scenes/logic_puzzle/input_btn.tscn" id="9_ovrei"]
 [ext_resource type="PackedScene" uid="uid://b31uqyfh8idow" path="res://scenes/logic_puzzle/output_lbl.tscn" id="10_27kub"]
-[ext_resource type="PackedScene" uid="uid://utmlonu4t08m" path="res://scenes/drop_zone.tscn" id="10_nqqwg"]
+[ext_resource type="PackedScene" path="res://scenes/drop_zone.tscn" id="10_nqqwg"]
 [ext_resource type="PackedScene" uid="uid://cdx1h22jcwre0" path="res://scenes/logic_puzzle/logic_component.tscn" id="11_1ye73"]
 [ext_resource type="Script" path="res://scripts/logic_puzzle/output_lbl_gate.gd" id="11_f16yj"]
 [ext_resource type="PackedScene" uid="uid://cncu1nw7pdp3n" path="res://scenes/logic_puzzle/start_zone.tscn" id="12_521i2"]

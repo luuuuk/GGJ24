@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://boan08aug2m4w"]
+[gd_scene load_steps=28 format=3 uid="uid://boan08aug2m4w"]
 
 [ext_resource type="Texture2D" uid="uid://dooxbk33phh61" path="res://assets/worldmap.png" id="1_8k05y"]
 [ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_50bgd"]
@@ -6,14 +6,19 @@
 [ext_resource type="Resource" uid="uid://dwer7oe6rcdkq" path="res://dialogue/key.dialogue" id="3_bdywf"]
 [ext_resource type="Script" path="res://scripts/followCam.gd" id="4_40gjk"]
 [ext_resource type="PackedScene" uid="uid://bobnnio6u4ain" path="res://scenes/items/key.tscn" id="5_ea2yu"]
-[ext_resource type="PackedScene" uid="uid://dykil5l1a53l2" path="res://scenes/items/croissant.tscn" id="5_uy1ij"]
+[ext_resource type="PackedScene" path="res://scenes/items/croissant.tscn" id="5_uy1ij"]
 [ext_resource type="Script" path="res://scripts/inventory/inventoryItem.gd" id="6_pkixr"]
 [ext_resource type="PackedScene" uid="uid://c5vrrj4hsx1fg" path="res://scenes/items/coin.tscn" id="6_ppy07"]
 [ext_resource type="PackedScene" uid="uid://da5se2fpjfdm1" path="res://scenes/inventory/inventory.tscn" id="7_wg7mv"]
 [ext_resource type="Texture2D" uid="uid://i20nqvxhig5g" path="res://assets/items/croissant_icon.png" id="7_yqgdg"]
-[ext_resource type="PackedScene" uid="uid://bny1ub117xpxu" path="res://scenes/Actionable.tscn" id="8_h7jx6"]
+[ext_resource type="PackedScene" path="res://scenes/Actionable.tscn" id="8_h7jx6"]
 [ext_resource type="Resource" uid="uid://bm4qjwyo2yugh" path="res://dialogue/lockedDoor.dialogue" id="9_aey6n"]
 [ext_resource type="Script" path="res://scripts/DoortoTeen.gd" id="14_cbcea"]
+[ext_resource type="Script" path="res://scripts/game_over/PotHole1.gd" id="15_73fmw"]
+[ext_resource type="Script" path="res://scripts/game_over/PotHole2.gd" id="16_o0mxc"]
+[ext_resource type="Script" path="res://scripts/game_over/PotHole3.gd" id="17_vm2m2"]
+[ext_resource type="Script" path="res://scripts/BGMusic.gd" id="18_2prqw"]
+[ext_resource type="Script" path="res://scripts/LogicGatesRiddle.gd" id="14_wd64b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jshdq"]
 size = Vector2(2780.62, 628)
@@ -43,8 +48,17 @@ func _process(delta):
 	pass
 "
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g4yjg"]
-radius = 419.03
+[sub_resource type="CircleShape2D" id="CircleShape2D_cjpn5"]
+radius = 384.105
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xcgfe"]
+radius = 159.154
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jjv0p"]
+radius = 153.029
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3qa53"]
+radius = 192.128
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(787, 556)
@@ -78,7 +92,7 @@ polygon = PackedVector2Array(-1056, -1030, -1091, -814, -1377, -624, -1401, -237
 polygon = PackedVector2Array(-751, -2283, -89, -2272, -190, -2610, -393, -2598, -364, -2709, -220, -2798, -229, -3067, -250, -3120, -334, -3126, -370, -3077, -463, -3062, -426, -2918, -635, -2905, -645, -2771, -604, -2567)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="MapBody"]
-polygon = PackedVector2Array(925, -3206, -746, -3249, -741, -3591, 925, -3607)
+polygon = PackedVector2Array(925, -3206, 271, -3226, 80, -3171, -0.779785, -3245.45, -119, -3349, -209.14, -3254.33, -530, -3268, -730, -3310, -741, -3591, 925, -3607)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="MapBody"]
 polygon = PackedVector2Array(-3560, -248, -3405, -841, -2876, -937, -2876, -1247, -3405, -1359, -3416, -1621, -4537, -1605, -4478, -1220, -3955, -1252, -3928, -1119, -4115, -937, -4473, -862, -4489, -345)
@@ -87,7 +101,7 @@ polygon = PackedVector2Array(-3560, -248, -3405, -841, -2876, -937, -2876, -1247
 polygon = PackedVector2Array(-2113, -3009, -2129, -2854, -2358, -2806, -2348, -2443, -2102, -2197, -2107, -1898, -2775, -1946, -2743, -3062)
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="MapBody"]
-polygon = PackedVector2Array(-885, -3276, -879, -3564, -1515, -3553, -1467, -3297, -1114, -3217)
+polygon = PackedVector2Array(-885, -3276, -879, -3564, -1515, -3553, -1467, -3323, -1128, -3272, -971, -3226)
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="MapBody"]
 polygon = PackedVector2Array(-2737, -3612, -2027, -3601, -2022, -3276, -2321, -3238, -2444, -3393, -2615, -3383, -2588, -3270, -2785, -3244)
@@ -102,7 +116,7 @@ polygon = PackedVector2Array(-2746, 662, -2714, 376, -2530, 291, -2445, 184, -23
 polygon = PackedVector2Array(185, -4898, 201, -4532, -128, -4548, -128, -4135, 57, -4172, 219, -3980, 235, -3777, -824, -3774, -800, -4970)
 
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="MapBody"]
-polygon = PackedVector2Array(-1225, -4778, -995, -4503, -971, -4303, -1142, -4244, -1161, -4052, -1091, -3873, -1198, -3713, -1815, -3753, -1850, -4543, -1623, -4629, -1673, -4722, -1844, -4685, -1836, -4954, -1700, -5056, -1364, -4754)
+polygon = PackedVector2Array(-1225, -4778, -995, -4503, -971, -4303, -1142, -4244, -1161, -4052, -1091, -3873, -1209, -3755, -1815, -3753, -1850, -4543, -1623, -4629, -1673, -4722, -1844, -4685, -1836, -4954, -1700, -5056, -1364, -4754)
 
 [node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="MapBody"]
 polygon = PackedVector2Array(-7505, -17, -6864, 1, -6858, 648, -7452, 678)
@@ -150,21 +164,22 @@ polygon = PackedVector2Array(-3099, -5083, -3199, -4895, -2903, -4827, -2743, -4
 polygon = PackedVector2Array(-2607, -4852, -2419, -5012, -2169, -5009, -2069, -4902, -2351, -4813)
 
 [node name="Actionable" parent="MapBody" instance=ExtResource("8_h7jx6")]
-position = Vector2(-1571, -972)
+position = Vector2(-2229, -1136)
+scale = Vector2(4.556, 2.576)
 dialogue_resource = ExtResource("3_bdywf")
 dialogue_start = "pick_key"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBody/Actionable"]
-position = Vector2(3, 0)
+position = Vector2(148.815, 66.7702)
 shape = SubResource("CircleShape2D_vkcd3")
 
-[node name="ChangeLevelTrigger" parent="." instance=ExtResource("2_mbxwu")]
-position = Vector2(-2337, -2578)
-scale = Vector2(0.435, 0.435)
+[node name="GoToTeenRoom" parent="." instance=ExtResource("2_mbxwu")]
+position = Vector2(-2100, -421)
+scale = Vector2(0.598261, 0.893375)
 
 [node name="Key" parent="." instance=ExtResource("5_ea2yu")]
-position = Vector2(-1567, -973)
-scale = Vector2(1.885, 1.885)
+position = Vector2(-1562, -962)
+scale = Vector2(2.355, 2.355)
 
 [node name="Coin" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(797, 522)
@@ -220,11 +235,13 @@ scale = Vector2(0.535, 0.535)
 itemRes = SubResource("Resource_x4jh0")
 
 [node name="Door1" parent="." instance=ExtResource("8_h7jx6")]
-position = Vector2(-2111, -383)
+position = Vector2(-2115, -407)
+scale = Vector2(-0.627687, 1.2218)
+collision_layer = 17
 dialogue_resource = ExtResource("9_aey6n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door1"]
-position = Vector2(4, -2)
+position = Vector2(-23.8972, -6.54776)
 shape = SubResource("CircleShape2D_d68aa")
 script = SubResource("GDScript_7dl4c")
 
@@ -242,13 +259,49 @@ map = NodePath("../../MapBody/TextureRect")
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("7_wg7mv")]
 
-[node name="DoortoTeen" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 0
-script = ExtResource("14_cbcea")
+[node name="LogicGatesRiddle" type="Area2D" parent="."]
+position = Vector2(-2826, -727)
+script = ExtResource("14_wd64b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoortoTeen"]
-position = Vector2(-2100, -403)
-shape = SubResource("CircleShape2D_g4yjg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LogicGatesRiddle"]
+position = Vector2(-42, -167)
+shape = SubResource("CircleShape2D_cjpn5")
+
+[node name="PotHole1" type="Area2D" parent="."]
+position = Vector2(-2891, -3700)
+collision_layer = 0
+script = ExtResource("15_73fmw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PotHole1"]
+position = Vector2(0, -30)
+shape = SubResource("CircleShape2D_xcgfe")
+
+[node name="PotHole2" type="Area2D" parent="."]
+position = Vector2(-7119, -1749)
+collision_layer = 0
+script = ExtResource("16_o0mxc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PotHole2"]
+position = Vector2(17, -24)
+shape = SubResource("CircleShape2D_jjv0p")
+
+[node name="PotHole3" type="Area2D" parent="."]
+position = Vector2(-5056, -3080)
+collision_layer = 0
+script = ExtResource("17_vm2m2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PotHole3"]
+position = Vector2(10, -16)
+shape = SubResource("CircleShape2D_3qa53")
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("18_2prqw")
 
 [connection signal="body_entered" from="Door1" to="DoortoTeen" method="_on_door_1_body_entered"]
+[connection signal="body_entered" from="PotHole1" to="PotHole1" method="_on_body_entered"]
+[connection signal="body_entered" from="PotHole2" to="PotHole2" method="_on_body_entered"]
+[connection signal="body_entered" from="PotHole3" to="PotHole3" method="_on_body_entered"]
+[connection signal="body_entered" from="Door1" to="MapBody/Actionable" method="_on_door_1_body_entered"]
+[connection signal="body_exited" from="Door1" to="MapBody/Actionable" method="_on_door_1_body_exited"]
+[connection signal="body_entered" from="LogicGatesRiddle" to="LogicGatesRiddle" method="_on_body_entered"]
+

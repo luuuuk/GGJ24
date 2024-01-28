@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bwss2n0iforra"
+path="res://.godot/imported/cable.dialogue-1497b658b0c210daa51824447adfdaca.tres"
+
+[deps]
+
+source_file="res://dialogue/cable.dialogue"
+dest_files=["res://.godot/imported/cable.dialogue-1497b658b0c210daa51824447adfdaca.tres"]
+
+[params]
+
+defaults=true
