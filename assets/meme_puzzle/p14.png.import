@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq73yr2mdteoc"
-path="res://.godot/imported/blueprint_background.png-6b32096387f2a741c50b662504318627.ctex"
+uid="uid://s42dyilt2mbv"
+path="res://.godot/imported/p14.png-be8e198d00e030ba1fc4d113392de543.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/blueprint_background.png"
-dest_files=["res://.godot/imported/blueprint_background.png-6b32096387f2a741c50b662504318627.ctex"]
+source_file="res://assets/meme_puzzle/p14.png"
+dest_files=["res://.godot/imported/p14.png-be8e198d00e030ba1fc4d113392de543.ctex"]
 
 [params]
 

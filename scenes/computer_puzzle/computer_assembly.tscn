@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=3 uid="uid://c7tf3qq3u3f26"]
 
 [ext_resource type="Script" path="res://scripts/computer_puzzle/computer_assembly.gd" id="1_uu7wf"]
-[ext_resource type="PackedScene" path="res://scenes/drop_zone.tscn" id="2_jphor"]
-[ext_resource type="Texture2D" uid="uid://dxy114wrpmigq" path="res://assets/computer_hardware/CoolBackground.jpg" id="2_rgw65"]
+[ext_resource type="PackedScene" uid="uid://utmlonu4t08m" path="res://scenes/drop_zone.tscn" id="2_jphor"]
+[ext_resource type="Texture2D" uid="uid://dxy114wrpmigq" path="res://assets/background/CoolBackground.jpg" id="2_rgw65"]
 [ext_resource type="Texture2D" uid="uid://ngncumptdul5" path="res://assets/computer_hardware/Pc.svg" id="3_ufgj3"]
 [ext_resource type="Script" path="res://scripts/computer_puzzle/cpu.gd" id="5_ss136"]
 [ext_resource type="Script" path="res://scripts/computer_puzzle/gpu.gd" id="5_txe82"]
@@ -54,13 +54,13 @@ texture = ExtResource("3_ufgj3")
 expand_mode = 1
 
 [node name="start_zone_cpu" parent="." instance=ExtResource("2_jphor")]
-position = Vector2(121, 91)
+position = Vector2(140, 90)
 
 [node name="start_zone_ram" parent="." instance=ExtResource("2_jphor")]
-position = Vector2(113, 282)
+position = Vector2(120, 290)
 
 [node name="start_zone_gpu" parent="." instance=ExtResource("2_jphor")]
-position = Vector2(120, 496)
+position = Vector2(120, 490)
 
 [node name="end_zone_cpu" parent="." instance=ExtResource("2_jphor")]
 position = Vector2(718, 181)
@@ -69,7 +69,7 @@ position = Vector2(718, 181)
 position = Vector2(454, 172)
 
 [node name="end_zone_gpu" parent="." instance=ExtResource("2_jphor")]
-position = Vector2(684, 428)
+position = Vector2(709, 428)
 
 [node name="Node_CPU" type="Node2D" parent="." groups=["objects"]]
 position = Vector2(247, 133)

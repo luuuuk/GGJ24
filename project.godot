@@ -27,6 +27,10 @@ SceneSwitcher="*res://SceneSwitcher.gd"
 
 general/states=["State"]
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
