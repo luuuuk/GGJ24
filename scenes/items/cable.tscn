@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bihti03bn3s86"]
+
+[ext_resource type="PackedScene" uid="uid://dp11fpeekoxc7" path="res://scenes/items/collectable.tscn" id="1_r620w"]
+[ext_resource type="Script" path="res://scripts/inventory/inventoryItem.gd" id="2_thktw"]
+[ext_resource type="Texture2D" uid="uid://c666rycy1mu71" path="res://assets/plug.png" id="3_s2u2i"]
+
+[sub_resource type="Resource" id="Resource_7lm0l"]
+script = ExtResource("2_thktw")
+name = "cable"
+texture = ExtResource("3_s2u2i")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oepni"]
+resource_local_to_scene = true
+size = Vector2(32, 24)
+
+[node name="cable" instance=ExtResource("1_r620w")]
+itemRes = SubResource("Resource_7lm0l")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_oepni")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("3_s2u2i")

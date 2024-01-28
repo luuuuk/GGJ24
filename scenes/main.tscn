@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://scripts/game_over/PotHole2.gd" id="16_o0mxc"]
 [ext_resource type="Script" path="res://scripts/game_over/PotHole3.gd" id="17_vm2m2"]
 [ext_resource type="Script" path="res://scripts/BGMusic.gd" id="18_2prqw"]
+[ext_resource type="Script" path="res://scripts/LogicGatesRiddle.gd" id="14_wd64b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jshdq"]
 size = Vector2(2780.62, 628)
@@ -47,8 +48,8 @@ func _process(delta):
 	pass
 "
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g4yjg"]
-radius = 419.03
+[sub_resource type="CircleShape2D" id="CircleShape2D_cjpn5"]
+radius = 384.105
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xcgfe"]
 radius = 159.154
@@ -163,21 +164,22 @@ polygon = PackedVector2Array(-3099, -5083, -3199, -4895, -2903, -4827, -2743, -4
 polygon = PackedVector2Array(-2607, -4852, -2419, -5012, -2169, -5009, -2069, -4902, -2351, -4813)
 
 [node name="Actionable" parent="MapBody" instance=ExtResource("8_h7jx6")]
-position = Vector2(-1571, -972)
+position = Vector2(-2229, -1136)
+scale = Vector2(4.556, 2.576)
 dialogue_resource = ExtResource("3_bdywf")
 dialogue_start = "pick_key"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBody/Actionable"]
-position = Vector2(3, 0)
+position = Vector2(148.815, 66.7702)
 shape = SubResource("CircleShape2D_vkcd3")
 
-[node name="ChangeLevelTrigger" parent="." instance=ExtResource("2_mbxwu")]
-position = Vector2(-2337, -2578)
-scale = Vector2(0.435, 0.435)
+[node name="GoToTeenRoom" parent="." instance=ExtResource("2_mbxwu")]
+position = Vector2(-2100, -421)
+scale = Vector2(0.598261, 0.893375)
 
 [node name="Key" parent="." instance=ExtResource("5_ea2yu")]
-position = Vector2(-1567, -973)
-scale = Vector2(1.885, 1.885)
+position = Vector2(-1562, -962)
+scale = Vector2(2.355, 2.355)
 
 [node name="Coin" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(797, 522)
@@ -233,11 +235,13 @@ scale = Vector2(0.535, 0.535)
 itemRes = SubResource("Resource_x4jh0")
 
 [node name="Door1" parent="." instance=ExtResource("8_h7jx6")]
-position = Vector2(-2111, -383)
+position = Vector2(-2115, -407)
+scale = Vector2(-0.627687, 1.2218)
+collision_layer = 17
 dialogue_resource = ExtResource("9_aey6n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door1"]
-position = Vector2(4, -2)
+position = Vector2(-23.8972, -6.54776)
 shape = SubResource("CircleShape2D_d68aa")
 script = SubResource("GDScript_7dl4c")
 
@@ -255,14 +259,13 @@ map = NodePath("../../MapBody/TextureRect")
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("7_wg7mv")]
 
-[node name="DoortoTeen" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 0
-script = ExtResource("14_cbcea")
+[node name="LogicGatesRiddle" type="Area2D" parent="."]
+position = Vector2(-2826, -727)
+script = ExtResource("14_wd64b")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoortoTeen"]
-position = Vector2(-2100, -403)
-shape = SubResource("CircleShape2D_g4yjg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LogicGatesRiddle"]
+position = Vector2(-42, -167)
+shape = SubResource("CircleShape2D_cjpn5")
 
 [node name="PotHole1" type="Area2D" parent="."]
 position = Vector2(-2891, -3700)
@@ -298,3 +301,7 @@ script = ExtResource("18_2prqw")
 [connection signal="body_entered" from="PotHole1" to="PotHole1" method="_on_body_entered"]
 [connection signal="body_entered" from="PotHole2" to="PotHole2" method="_on_body_entered"]
 [connection signal="body_entered" from="PotHole3" to="PotHole3" method="_on_body_entered"]
+[connection signal="body_entered" from="Door1" to="MapBody/Actionable" method="_on_door_1_body_entered"]
+[connection signal="body_exited" from="Door1" to="MapBody/Actionable" method="_on_door_1_body_exited"]
+[connection signal="body_entered" from="LogicGatesRiddle" to="LogicGatesRiddle" method="_on_body_entered"]
+

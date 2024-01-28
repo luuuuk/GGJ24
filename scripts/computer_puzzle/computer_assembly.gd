@@ -26,7 +26,7 @@ func _on_button_pressed():
 			
 	if correct_arrangement:
 		print("YES")
-		get_tree().change_scene_to_file("res://scenes/main.tscn")
+		SceneSwitcher.switch_scene("res://scenes/teenRoom.tscn")
 	else:
 		print("NO")
 		for zone in rest_nodes:

@@ -109,8 +109,7 @@ inventory = ExtResource("2_au7sv")
 position = Vector2(-2.85714, 16.4286)
 scale = Vector2(0.0490776, 0.0467411)
 sprite_frames = SubResource("SpriteFrames_a4idp")
-animation = &"move_up"
-frame_progress = 0.304533
+animation = &"move_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.714285, 9.64285)
