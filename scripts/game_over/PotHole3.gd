@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,9 +11,5 @@ func _process(delta):
 	pass
 
 
-func _on_yes_pressed():
-	SceneSwitcher.switch_scene("res://scenes/main.tscn")
-
-
-func _on_okay_pressed():
-	SceneSwitcher.switch_scene("res://scenes/main.tscn")
+func _on_body_entered(body):
+	SceneSwitcher.switch_scene("res://scenes/game_over/game_over.tscn")

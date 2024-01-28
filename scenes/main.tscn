@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://boan08aug2m4w"]
+[gd_scene load_steps=27 format=3 uid="uid://boan08aug2m4w"]
 
 [ext_resource type="Texture2D" uid="uid://dooxbk33phh61" path="res://assets/worldmap.png" id="1_8k05y"]
 [ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_50bgd"]
@@ -6,14 +6,17 @@
 [ext_resource type="Resource" uid="uid://dwer7oe6rcdkq" path="res://dialogue/key.dialogue" id="3_bdywf"]
 [ext_resource type="Script" path="res://scripts/followCam.gd" id="4_40gjk"]
 [ext_resource type="PackedScene" uid="uid://bobnnio6u4ain" path="res://scenes/items/key.tscn" id="5_ea2yu"]
-[ext_resource type="PackedScene" uid="uid://dykil5l1a53l2" path="res://scenes/items/croissant.tscn" id="5_uy1ij"]
+[ext_resource type="PackedScene" path="res://scenes/items/croissant.tscn" id="5_uy1ij"]
 [ext_resource type="Script" path="res://scripts/inventory/inventoryItem.gd" id="6_pkixr"]
 [ext_resource type="PackedScene" uid="uid://c5vrrj4hsx1fg" path="res://scenes/items/coin.tscn" id="6_ppy07"]
 [ext_resource type="PackedScene" uid="uid://da5se2fpjfdm1" path="res://scenes/inventory/inventory.tscn" id="7_wg7mv"]
 [ext_resource type="Texture2D" uid="uid://i20nqvxhig5g" path="res://assets/items/croissant_icon.png" id="7_yqgdg"]
-[ext_resource type="PackedScene" uid="uid://bny1ub117xpxu" path="res://scenes/Actionable.tscn" id="8_h7jx6"]
+[ext_resource type="PackedScene" path="res://scenes/Actionable.tscn" id="8_h7jx6"]
 [ext_resource type="Resource" uid="uid://bm4qjwyo2yugh" path="res://dialogue/lockedDoor.dialogue" id="9_aey6n"]
 [ext_resource type="Script" path="res://scripts/DoortoTeen.gd" id="14_cbcea"]
+[ext_resource type="Script" path="res://scripts/game_over/PotHole1.gd" id="15_73fmw"]
+[ext_resource type="Script" path="res://scripts/game_over/PotHole2.gd" id="16_o0mxc"]
+[ext_resource type="Script" path="res://scripts/game_over/PotHole3.gd" id="17_vm2m2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jshdq"]
 size = Vector2(2780.62, 628)
@@ -45,6 +48,15 @@ func _process(delta):
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4yjg"]
 radius = 419.03
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xcgfe"]
+radius = 159.154
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jjv0p"]
+radius = 153.029
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3qa53"]
+radius = 192.128
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(787, 556)
@@ -251,4 +263,34 @@ script = ExtResource("14_cbcea")
 position = Vector2(-2100, -403)
 shape = SubResource("CircleShape2D_g4yjg")
 
+[node name="PotHole1" type="Area2D" parent="."]
+position = Vector2(-2891, -3700)
+collision_layer = 0
+script = ExtResource("15_73fmw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PotHole1"]
+position = Vector2(0, -30)
+shape = SubResource("CircleShape2D_xcgfe")
+
+[node name="PotHole2" type="Area2D" parent="."]
+position = Vector2(-7119, -1749)
+collision_layer = 0
+script = ExtResource("16_o0mxc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PotHole2"]
+position = Vector2(17, -24)
+shape = SubResource("CircleShape2D_jjv0p")
+
+[node name="PotHole3" type="Area2D" parent="."]
+position = Vector2(-5056, -3080)
+collision_layer = 0
+script = ExtResource("17_vm2m2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PotHole3"]
+position = Vector2(10, -16)
+shape = SubResource("CircleShape2D_3qa53")
+
 [connection signal="body_entered" from="Door1" to="DoortoTeen" method="_on_door_1_body_entered"]
+[connection signal="body_entered" from="PotHole1" to="PotHole1" method="_on_body_entered"]
+[connection signal="body_entered" from="PotHole2" to="PotHole2" method="_on_body_entered"]
+[connection signal="body_entered" from="PotHole3" to="PotHole3" method="_on_body_entered"]
