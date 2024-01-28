@@ -71,6 +71,7 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
 			if puzzle_solved:
 				print("done!")
+				State.meme_solved = true
 				SceneSwitcher.switch_scene("res://scenes/main.tscn")
 			puzzle_solved = check_success()
 			

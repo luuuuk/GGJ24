@@ -12,6 +12,11 @@ func switch_scene(res_path):
 
 
 func _deferred_switch_scene(res_path):
+	
+	if State.meme_solved && State.computer_solved && State.logic_solved:
+		res_path = "res://scenes/game_over/game_over.tscn"
+	
+	
 	current_scene.free()
 	var s = load(res_path)
 	current_scene = s.instantiate()
