@@ -28,9 +28,6 @@ func _deferred_switch_scene(res_path):
 	if State.current_scene == "teenRoom" && res_path == "res://scenes/main.tscn":
 		print("going from teen to main")
 		get_tree().current_scene.get_node("Player").position = Vector2(-2060,-200)
-	elif State.current_scene == "main" && res_path == "res://scenes/teenRoom.tscn":
-		print("going from main to teen")
-		get_tree().current_scene.get_node("Player").position = Vector2(0,0)
 	elif State.current_scene == "logicPuzzle" && res_path == "res://scenes/main.tscn":
 		print("going from logic to main")
 		get_tree().current_scene.get_node("Player").position = Vector2(-2660,-200)

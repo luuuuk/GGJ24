@@ -20,4 +20,4 @@ func _on_animation_finished(anim_name):
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
-				get_tree().change_scene_to_file("res://scenes/intro_landing.tscn")
+				SceneSwitcher.switch_scene("res://scenes/intro_landing.tscn")
