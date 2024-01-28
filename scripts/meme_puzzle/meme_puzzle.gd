@@ -36,7 +36,6 @@ func _ready():
 			
 	var cntr = 0
 	for piece in pieces:
-		print(piece.name)
 		piece.starting_pos_index = start_order[cntr]-1
 		piece._ready()
 		
