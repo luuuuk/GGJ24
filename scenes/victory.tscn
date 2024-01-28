@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cx1yf65a4ovl0" path="res://assets/big_brain/Alien_Big_Brain-9.png" id="10_50atp"]
 [ext_resource type="Texture2D" uid="uid://dj1iy6upoc3ln" path="res://assets/big_brain/Alien_Big_Brain-10.png" id="11_ewqk3"]
 [ext_resource type="Texture2D" uid="uid://ctvcarhohlmtq" path="res://assets/big_brain/Alien_Big_Brain-11.png" id="12_jeukt"]
-[ext_resource type="Texture2D" uid="uid://dxy114wrpmigq" path="res://assets/computer_hardware/CoolBackground.jpg" id="13_j2quj"]
+[ext_resource type="Texture2D" path="res://assets/computer_hardware/CoolBackground.jpg" id="13_j2quj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_op8yi"]
 animations = [{

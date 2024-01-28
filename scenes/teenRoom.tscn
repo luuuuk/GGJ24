@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_7u85n"]
 [ext_resource type="Script" path="res://scripts/followCam.gd" id="3_0v6kx"]
 [ext_resource type="PackedScene" uid="uid://da5se2fpjfdm1" path="res://scenes/inventory/inventory.tscn" id="3_g5rl2"]
-[ext_resource type="PackedScene" uid="uid://bihti03bn3s86" path="res://scenes/items/cable.tscn" id="6_nkjcf"]
+[ext_resource type="PackedScene" path="res://scenes/items/cable.tscn" id="6_nkjcf"]
 [ext_resource type="Script" path="res://scripts/inventory/inventoryItem.gd" id="7_ndgd7"]
 [ext_resource type="Script" path="res://scripts/computer.gd" id="8_m55ow"]
 [ext_resource type="Texture2D" uid="uid://c73uxruqpw0s1" path="res://assets/plug_icon.png" id="8_vss3q"]
