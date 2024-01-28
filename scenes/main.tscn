@@ -13,12 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://i20nqvxhig5g" path="res://assets/items/croissant_icon.png" id="7_yqgdg"]
 [ext_resource type="PackedScene" path="res://scenes/Actionable.tscn" id="8_h7jx6"]
 [ext_resource type="Resource" uid="uid://bm4qjwyo2yugh" path="res://dialogue/lockedDoor.dialogue" id="9_aey6n"]
-[ext_resource type="Script" path="res://scripts/DoortoTeen.gd" id="14_cbcea"]
+[ext_resource type="Script" path="res://scripts/LogicGatesRiddle.gd" id="14_wd64b"]
 [ext_resource type="Script" path="res://scripts/game_over/PotHole1.gd" id="15_73fmw"]
 [ext_resource type="Script" path="res://scripts/game_over/PotHole2.gd" id="16_o0mxc"]
 [ext_resource type="Script" path="res://scripts/game_over/PotHole3.gd" id="17_vm2m2"]
 [ext_resource type="Script" path="res://scripts/BGMusic.gd" id="18_2prqw"]
-[ext_resource type="Script" path="res://scripts/LogicGatesRiddle.gd" id="14_wd64b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jshdq"]
 size = Vector2(2780.62, 628)
@@ -297,11 +296,9 @@ shape = SubResource("CircleShape2D_3qa53")
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 script = ExtResource("18_2prqw")
 
-[connection signal="body_entered" from="Door1" to="DoortoTeen" method="_on_door_1_body_entered"]
-[connection signal="body_entered" from="PotHole1" to="PotHole1" method="_on_body_entered"]
-[connection signal="body_entered" from="PotHole2" to="PotHole2" method="_on_body_entered"]
-[connection signal="body_entered" from="PotHole3" to="PotHole3" method="_on_body_entered"]
 [connection signal="body_entered" from="Door1" to="MapBody/Actionable" method="_on_door_1_body_entered"]
 [connection signal="body_exited" from="Door1" to="MapBody/Actionable" method="_on_door_1_body_exited"]
 [connection signal="body_entered" from="LogicGatesRiddle" to="LogicGatesRiddle" method="_on_body_entered"]
-
+[connection signal="body_entered" from="PotHole1" to="PotHole1" method="_on_body_entered"]
+[connection signal="body_entered" from="PotHole2" to="PotHole2" method="_on_body_entered"]
+[connection signal="body_entered" from="PotHole3" to="PotHole3" method="_on_body_entered"]
