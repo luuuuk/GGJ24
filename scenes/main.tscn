@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://boan08aug2m4w"]
+[gd_scene load_steps=21 format=3 uid="uid://boan08aug2m4w"]
 
 [ext_resource type="Texture2D" uid="uid://dooxbk33phh61" path="res://assets/worldmap.png" id="1_8k05y"]
 [ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_50bgd"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://i20nqvxhig5g" path="res://assets/items/croissant_icon.png" id="7_yqgdg"]
 [ext_resource type="PackedScene" uid="uid://bny1ub117xpxu" path="res://scenes/Actionable.tscn" id="8_h7jx6"]
 [ext_resource type="Resource" uid="uid://bm4qjwyo2yugh" path="res://dialogue/lockedDoor.dialogue" id="9_aey6n"]
+[ext_resource type="Script" path="res://scripts/DoortoTeen.gd" id="14_cbcea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jshdq"]
 size = Vector2(2780.62, 628)
@@ -27,6 +28,23 @@ texture = ExtResource("7_yqgdg")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d68aa"]
 radius = 127.318
+
+[sub_resource type="GDScript" id="GDScript_7dl4c"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4yjg"]
+radius = 226.035
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(787, 556)
@@ -208,6 +226,7 @@ dialogue_resource = ExtResource("9_aey6n")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door1"]
 position = Vector2(4, -2)
 shape = SubResource("CircleShape2D_d68aa")
+script = SubResource("GDScript_7dl4c")
 
 [node name="Player" parent="." instance=ExtResource("2_50bgd")]
 scale = Vector2(2.425, 2.425)
@@ -222,3 +241,10 @@ map = NodePath("../../MapBody/TextureRect")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("7_wg7mv")]
+
+[node name="DoortoTeen" type="Area2D" parent="."]
+script = ExtResource("14_cbcea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoortoTeen"]
+position = Vector2(-2100, -403)
+shape = SubResource("CircleShape2D_g4yjg")
