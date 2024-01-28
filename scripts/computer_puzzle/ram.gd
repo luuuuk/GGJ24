@@ -21,6 +21,10 @@ func _physics_process(delta):
 		global_position = lerp(global_position, get_global_mouse_position(), 25*delta)
 	else:
 		global_position = lerp(global_position, rest_point, 10 * delta)
+		if previous_rest_zone.name == "end_zone_ram":
+			rotation = lerp_angle(rotation, -PI/2, 10*delta)
+		else:
+			rotation = lerp_angle(rotation, 0, 10*delta)
 		
 func _input(event):
 	if event is InputEventMouseButton:

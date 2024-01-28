@@ -1,44 +1,60 @@
-[gd_scene load_steps=14 format=3 uid="uid://c7tf3qq3u3f26"]
+[gd_scene load_steps=18 format=3 uid="uid://c7tf3qq3u3f26"]
 
 [ext_resource type="Script" path="res://scripts/computer_puzzle/computer_assembly.gd" id="1_uu7wf"]
-[ext_resource type="Texture2D" uid="uid://cfavjfqkd6m0r" path="res://assets/computer_hardware/old/motherboard-icon.svg" id="1_xqi2t"]
 [ext_resource type="PackedScene" uid="uid://utmlonu4t08m" path="res://scenes/drop_zone.tscn" id="2_jphor"]
-[ext_resource type="Texture2D" uid="uid://cjjnnw5ncpaxy" path="res://assets/computer_hardware/old/cpu-svgrepo-com.svg" id="3_udopi"]
-[ext_resource type="Texture2D" uid="uid://vbv8dwybcxkp" path="res://assets/computer_hardware/old/tech-ram-svgrepo-com.svg" id="4_2yr4f"]
+[ext_resource type="Texture2D" uid="uid://dxy114wrpmigq" path="res://assets/computer_hardware/CoolBackground.jpg" id="2_rgw65"]
+[ext_resource type="Texture2D" uid="uid://ngncumptdul5" path="res://assets/computer_hardware/Pc.svg" id="3_ufgj3"]
 [ext_resource type="Script" path="res://scripts/computer_puzzle/cpu.gd" id="5_ss136"]
 [ext_resource type="Script" path="res://scripts/computer_puzzle/gpu.gd" id="5_txe82"]
-[ext_resource type="Texture2D" uid="uid://brk4qqol4yxc2" path="res://assets/computer_hardware/old/gpu-svgrepo-com.svg" id="5_vw0qj"]
+[ext_resource type="Texture2D" uid="uid://dbohw21cvu1kp" path="res://assets/computer_hardware/cpu.png" id="6_5ntbk"]
 [ext_resource type="Script" path="res://scripts/computer_puzzle/ram.gd" id="6_muan5"]
-[ext_resource type="Texture2D" uid="uid://ca7rsf5ppliey" path="res://assets/computer_hardware/old/power-button-svgrepo-com.svg" id="9_d7767"]
+[ext_resource type="Texture2D" uid="uid://br8r2oytnhwhw" path="res://assets/computer_hardware/gpu.png" id="8_hm2hx"]
+[ext_resource type="Texture2D" uid="uid://hadk7gqlfxk6" path="res://assets/computer_hardware/ram.png" id="10_rm64l"]
+[ext_resource type="Texture2D" uid="uid://ddc3wpwltw2j8" path="res://assets/computer_hardware/PowerButton 2.svg" id="11_krqbn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cn7tt"]
-size = Vector2(488.55, 472)
+size = Vector2(381.68, 372)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1btl"]
-size = Vector2(896.772, 331.036)
+size = Vector2(689.795, 343.763)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_blc3y"]
-size = Vector2(684.304, 436.201)
+size = Vector2(692, 232)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xwig7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_836en"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8e8vr"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_uu7wf")
 
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 649.0
+texture = ExtResource("2_rgw65")
+expand_mode = 3
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -13.0
 offset_top = -5.0
 offset_right = 1174.0
 offset_bottom = 672.0
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 620.0
-offset_top = 38.0
-offset_right = 1148.0
-offset_bottom = 560.0
-texture = ExtResource("1_xqi2t")
+[node name="Computer" type="TextureRect" parent="."]
+offset_left = -44.0
+offset_top = -175.0
+offset_right = 668.0
+offset_bottom = 347.0
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("3_ufgj3")
+expand_mode = 1
 
 [node name="start_zone_cpu" parent="." instance=ExtResource("2_jphor")]
-position = Vector2(113, 88)
+position = Vector2(121, 91)
 
 [node name="start_zone_ram" parent="." instance=ExtResource("2_jphor")]
 position = Vector2(113, 282)
@@ -47,60 +63,65 @@ position = Vector2(113, 282)
 position = Vector2(120, 496)
 
 [node name="end_zone_cpu" parent="." instance=ExtResource("2_jphor")]
-position = Vector2(970, 396)
+position = Vector2(718, 181)
 
 [node name="end_zone_ram" parent="." instance=ExtResource("2_jphor")]
-position = Vector2(981, 98)
+position = Vector2(454, 172)
 
 [node name="end_zone_gpu" parent="." instance=ExtResource("2_jphor")]
-position = Vector2(729, 191)
+position = Vector2(684, 428)
 
 [node name="Node_CPU" type="Node2D" parent="." groups=["objects"]]
 position = Vector2(247, 133)
 script = ExtResource("5_ss136")
 
 [node name="CPU" type="Sprite2D" parent="Node_CPU"]
-scale = Vector2(0.262, 0.25)
-texture = ExtResource("3_udopi")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_5ntbk")
 
 [node name="Area2D" type="Area2D" parent="Node_CPU/CPU"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node_CPU/CPU/Area2D"]
+position = Vector2(-64.8855, 4)
 shape = SubResource("RectangleShape2D_cn7tt")
 
 [node name="Node_GPU" type="Node2D" parent="." groups=["objects"]]
 script = ExtResource("5_txe82")
 
 [node name="GPU" type="Sprite2D" parent="Node_GPU"]
-rotation = 0.994838
 scale = Vector2(0.236302, 0.264717)
-texture = ExtResource("5_vw0qj")
+texture = ExtResource("8_hm2hx")
 
 [node name="Area2D" type="Area2D" parent="Node_GPU/GPU"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node_GPU/GPU/Area2D"]
-position = Vector2(-35.8279, 37.4236)
-rotation = 0.523599
+position = Vector2(-2.11594, 16.9993)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_d1btl")
 
 [node name="Node_RAM" type="Node2D" parent="." groups=["objects"]]
 script = ExtResource("6_muan5")
 
 [node name="RAM" type="Sprite2D" parent="Node_RAM"]
-scale = Vector2(0.227969, 0.139844)
-texture = ExtResource("4_2yr4f")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_rm64l")
 
 [node name="Area2D" type="Area2D" parent="Node_RAM/RAM"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node_RAM/RAM/Area2D"]
+position = Vector2(27, -40)
 shape = SubResource("RectangleShape2D_blc3y")
 
 [node name="Button" type="Button" parent="."]
-offset_left = 866.0
-offset_top = 558.0
-offset_right = 935.0
-offset_bottom = 656.0
-icon = ExtResource("9_d7767")
+offset_left = 637.0
+offset_top = 470.0
+offset_right = 706.0
+offset_bottom = 568.0
+scale = Vector2(3, 3)
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xwig7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_836en")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8e8vr")
+icon = ExtResource("11_krqbn")
 flat = true
 expand_icon = true
 
