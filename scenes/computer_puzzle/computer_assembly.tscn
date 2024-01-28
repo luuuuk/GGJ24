@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://c7tf3qq3u3f26"]
 
 [ext_resource type="Script" path="res://scripts/computer_puzzle/computer_assembly.gd" id="1_uu7wf"]
-[ext_resource type="PackedScene" uid="uid://utmlonu4t08m" path="res://scenes/drop_zone.tscn" id="2_jphor"]
+[ext_resource type="PackedScene" path="res://scenes/drop_zone.tscn" id="2_jphor"]
 [ext_resource type="Texture2D" uid="uid://dxy114wrpmigq" path="res://assets/background/CoolBackground.jpg" id="2_rgw65"]
 [ext_resource type="Texture2D" uid="uid://ngncumptdul5" path="res://assets/computer_hardware/Pc.svg" id="3_ufgj3"]
 [ext_resource type="Script" path="res://scripts/computer_puzzle/cpu.gd" id="5_ss136"]
