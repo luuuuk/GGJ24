@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://boan08aug2m4w"]
+[gd_scene load_steps=32 format=3 uid="uid://boan08aug2m4w"]
 
 [ext_resource type="Texture2D" uid="uid://dooxbk33phh61" path="res://assets/worldmap.png" id="1_8k05y"]
 [ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_50bgd"]
@@ -11,13 +11,17 @@
 [ext_resource type="PackedScene" uid="uid://c5vrrj4hsx1fg" path="res://scenes/items/coin.tscn" id="6_ppy07"]
 [ext_resource type="PackedScene" uid="uid://da5se2fpjfdm1" path="res://scenes/inventory/inventory.tscn" id="7_wg7mv"]
 [ext_resource type="Texture2D" uid="uid://i20nqvxhig5g" path="res://assets/items/croissant_icon.png" id="7_yqgdg"]
-[ext_resource type="PackedScene" path="res://scenes/Actionable.tscn" id="8_h7jx6"]
+[ext_resource type="PackedScene" uid="uid://bgeommfcu71ck" path="res://scenes/Actionable.tscn" id="8_h7jx6"]
 [ext_resource type="Resource" uid="uid://bm4qjwyo2yugh" path="res://dialogue/lockedDoor.dialogue" id="9_aey6n"]
 [ext_resource type="Script" path="res://scripts/LogicGatesRiddle.gd" id="14_wd64b"]
 [ext_resource type="Script" path="res://scripts/game_over/PotHole1.gd" id="15_73fmw"]
 [ext_resource type="Script" path="res://scripts/game_over/PotHole2.gd" id="16_o0mxc"]
 [ext_resource type="Script" path="res://scripts/game_over/PotHole3.gd" id="17_vm2m2"]
 [ext_resource type="Script" path="res://scripts/BGMusic.gd" id="18_2prqw"]
+[ext_resource type="Texture2D" uid="uid://cf4v4a2mxxsq3" path="res://assets/skeletons/SkeletonDab.png" id="19_o41dt"]
+[ext_resource type="Texture2D" uid="uid://5aobrg8op8nn" path="res://assets/skeletons/SkeletonMoustache.png" id="20_280q5"]
+[ext_resource type="Texture2D" uid="uid://cdnw1kjksltkn" path="res://assets/skeletons/SkeletonGrimaceShake.png" id="21_kd2yv"]
+[ext_resource type="Texture2D" uid="uid://cl002mlgyie7u" path="res://assets/skeletons/SkeletonPlanking.png" id="22_llhgq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jshdq"]
 size = Vector2(2780.62, 628)
@@ -295,6 +299,26 @@ shape = SubResource("CircleShape2D_3qa53")
 
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 script = ExtResource("18_2prqw")
+
+[node name="SkeletonDab" type="Sprite2D" parent="."]
+position = Vector2(-4785.75, -1985.5)
+scale = Vector2(0.051259, 0.0598827)
+texture = ExtResource("19_o41dt")
+
+[node name="SkeletonMoustache" type="Sprite2D" parent="."]
+position = Vector2(-1749, -3834)
+scale = Vector2(0.057554, 0.0690955)
+texture = ExtResource("20_280q5")
+
+[node name="SkeletonGrimaceShake" type="Sprite2D" parent="."]
+position = Vector2(-5178, -3581)
+scale = Vector2(0.0587532, 0.0521357)
+texture = ExtResource("21_kd2yv")
+
+[node name="SkeletonPlanking" type="Sprite2D" parent="."]
+position = Vector2(-799.25, -1821.5)
+scale = Vector2(0.0479482, 0.0413669)
+texture = ExtResource("22_llhgq")
 
 [connection signal="body_entered" from="Door1" to="MapBody/Actionable" method="_on_door_1_body_entered"]
 [connection signal="body_exited" from="Door1" to="MapBody/Actionable" method="_on_door_1_body_exited"]
