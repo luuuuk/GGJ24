@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh3mgg0leodw7"]
+
+[ext_resource type="Script" path="res://scripts/meme_puzzle/puzzle_piece.gd" id="1_6jbkn"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q8rvf"]
+load_path = "res://.godot/imported/p2.png-43d9d2f4ce4c5fde482c09fd24585f67.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_au7le"]
+size = Vector2(513, 511)
+
+[node name="Node2D" type="Node2D" groups=["puzzle_piece"]]
+script = ExtResource("1_6jbkn")
+
+[node name="P1" type="Sprite2D" parent="."]
+scale = Vector2(0.16, 0.16)
+texture = SubResource("CompressedTexture2D_q8rvf")
+region_enabled = true
+region_rect = Rect2(1023, 1536, 510, 511)
+
+[node name="Area2D" type="Area2D" parent="P1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P1/Area2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_au7le")
+
+[connection signal="input_event" from="P1/Area2D" to="." method="_on_area_2d_input_event"]
