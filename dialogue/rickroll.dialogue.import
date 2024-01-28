@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://b3bsvjjt3pap4"
+path="res://.godot/imported/rickroll.dialogue-97832af345ea11fd7d207c4cc40fb124.tres"
+
+[deps]
+
+source_file="res://dialogue/rickroll.dialogue"
+dest_files=["res://.godot/imported/rickroll.dialogue-97832af345ea11fd7d207c4cc40fb124.tres"]
+
+[params]
+
+defaults=true

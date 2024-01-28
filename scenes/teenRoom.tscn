@@ -1,14 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://0sm02tmpwdi2"]
+[gd_scene load_steps=15 format=3 uid="uid://0sm02tmpwdi2"]
 
 [ext_resource type="Texture2D" uid="uid://cgqcv4a80ouu8" path="res://assets/teenRoomMap.png" id="1_hkl37"]
 [ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_7u85n"]
 [ext_resource type="Script" path="res://scripts/followCam.gd" id="3_0v6kx"]
 [ext_resource type="PackedScene" uid="uid://da5se2fpjfdm1" path="res://scenes/inventory/inventory.tscn" id="3_g5rl2"]
-[ext_resource type="PackedScene" uid="uid://bihti03bn3s86" path="res://scenes/items/cable.tscn" id="6_nkjcf"]
+[ext_resource type="PackedScene" path="res://scenes/items/cable.tscn" id="6_nkjcf"]
 [ext_resource type="Script" path="res://scripts/inventory/inventoryItem.gd" id="7_ndgd7"]
 [ext_resource type="Script" path="res://scripts/computer.gd" id="8_m55ow"]
 [ext_resource type="Texture2D" uid="uid://c73uxruqpw0s1" path="res://assets/plug_icon.png" id="8_vss3q"]
 [ext_resource type="Script" path="res://scripts/BackToMain.gd" id="9_qq4a1"]
+[ext_resource type="Script" path="res://scripts/Radio.gd" id="10_1pymm"]
 
 [sub_resource type="Resource" id="Resource_k7m8k"]
 script = ExtResource("7_ndgd7")
@@ -21,6 +22,9 @@ radius = 225.002
 [sub_resource type="CircleShape2D" id="CircleShape2D_a35w4"]
 radius = 293.002
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pith"]
+size = Vector2(383, 127)
+
 [node name="TeenRoom" type="Node2D"]
 
 [node name="Map" type="StaticBody2D" parent="."]
@@ -31,7 +35,7 @@ offset_bottom = 40.0
 texture = ExtResource("1_hkl37")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Map"]
-polygon = PackedVector2Array(1104, 1653, 1099, 1562, 192, 1539, 199, 423, 1061, 418, 1071, 657, 1462, 652, 1457, 415, 2059, 423, 2079, 856, 1804, 861, 1792, 1431, 2059, 1431, 2079, 1532, 1363, 1559, 1369, 1665, 2394, 1670, 2392, 2, 8, 0, -2, 1670)
+polygon = PackedVector2Array(1104, 1653, 1099, 1562, 192, 1539, 199, 423, 1061, 418, 1081, 529, 1457, 532, 1457, 415, 2059, 423, 2079, 856, 1804, 861, 1792, 1431, 2059, 1431, 2079, 1532, 1363, 1559, 1369, 1665, 2394, 1670, 2392, 2, 8, 0, -2, 1670)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map"]
 polygon = PackedVector2Array(790, 512, 792, 1225, 304, 1241, 267, 501)
@@ -72,5 +76,14 @@ script = ExtResource("9_qq4a1")
 position = Vector2(17, 239)
 shape = SubResource("CircleShape2D_a35w4")
 
+[node name="Radio" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("10_1pymm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Radio"]
+position = Vector2(1270.5, 595.5)
+shape = SubResource("RectangleShape2D_8pith")
+
 [connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]
 [connection signal="body_entered" from="BackToMain" to="BackToMain" method="_on_body_entered"]
+[connection signal="body_entered" from="Radio" to="Radio" method="_on_body_entered"]
