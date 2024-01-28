@@ -12,6 +12,11 @@ func switch_scene(res_path):
 
 
 func _deferred_switch_scene(res_path):
+	
+	if State.meme_solved && State.computer_solved && State.logic_solved:
+		res_path = "res://scenes/victory.tscn"
+	
+	
 	current_scene.free()
 	var s = load(res_path)
 	current_scene = s.instantiate()
@@ -23,12 +28,12 @@ func _deferred_switch_scene(res_path):
 	if State.current_scene == "teenRoom" && res_path == "res://scenes/main.tscn":
 		print("going from teen to main")
 		get_tree().current_scene.get_node("Player").position = Vector2(-2060,-200)
-	elif State.current_scene == "main" && res_path == "res://scenes/teenRoom.tscn":
-		print("going from main to teen")
-		get_tree().current_scene.get_node("Player").position = Vector2(0,0)
 	elif State.current_scene == "logicPuzzle" && res_path == "res://scenes/main.tscn":
 		print("going from logic to main")
 		get_tree().current_scene.get_node("Player").position = Vector2(-2660,-200)
+	elif State.current_scene == "memePuzzle" && res_path == "res://scenes/main.tscn":
+		print("going from meme to main")
+		get_tree().current_scene.get_node("Player").position = Vector2(-4200, -4200)
 	
 	if res_path == "res://scenes/logic_puzzle/logic_puzzle.tscn":
 		State.current_scene = "logicPuzzle"
@@ -38,3 +43,5 @@ func _deferred_switch_scene(res_path):
 		State.current_scene = "main"
 	elif res_path == "res://scenes/computer_puzzle/computer_assembly.tscn":
 		State.current_scene = "computerPuzzle"
+	elif res_path == "res://scenes/meme_puzzle/meme_puzzle.tscn":
+		State.current_scene = "memePuzzle"

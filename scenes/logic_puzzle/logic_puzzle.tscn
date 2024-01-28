@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://jn2dj4pbfdcr"]
 
-[ext_resource type="Texture2D" uid="uid://cq73yr2mdteoc" path="res://assets/blueprint_background.png" id="1_lu8oh"]
+[ext_resource type="Texture2D" uid="uid://cq73yr2mdteoc" path="res://assets/background/blueprint_background.png" id="1_lu8oh"]
 [ext_resource type="Script" path="res://scripts/logic_puzzle/logic_puzzle.gd" id="1_m7l4y"]
 [ext_resource type="Texture2D" uid="uid://bjqb8k3lrbkfi" path="res://assets/logic_gates/and.png" id="2_sy06f"]
 [ext_resource type="Texture2D" uid="uid://cmo4ucgax0xcj" path="res://assets/logic_gates/or.png" id="5_w48jy"]
@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://scripts/logic_puzzle/output_lbl_gate.gd" id="11_f16yj"]
 [ext_resource type="PackedScene" uid="uid://cncu1nw7pdp3n" path="res://scenes/logic_puzzle/start_zone.tscn" id="12_521i2"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_m7l4y")
 
 [node name="TextureRect" type="TextureRect" parent="."]
