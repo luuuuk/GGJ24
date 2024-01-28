@@ -1,0 +1,87 @@
+[gd_scene load_steps=17 format=3 uid="uid://bi2w25ljpnp1v"]
+
+[ext_resource type="Script" path="res://scripts/victory.gd" id="1_7ujsa"]
+[ext_resource type="Script" path="res://scripts/AudioStreamPlayer2DVictory.gd" id="1_hxqhj"]
+[ext_resource type="Texture2D" uid="uid://k5ioj6rbagle" path="res://assets/big_brain/Alien_Big_Brain-1.png" id="2_krk3u"]
+[ext_resource type="Texture2D" uid="uid://vcr3n78j4ntj" path="res://assets/big_brain/Alien_Big_Brain-2.png" id="3_mhr7l"]
+[ext_resource type="Texture2D" uid="uid://d4k06emngsxnw" path="res://assets/big_brain/Alien_Big_Brain-3.png" id="4_roluv"]
+[ext_resource type="Texture2D" uid="uid://cvegt153mr1tq" path="res://assets/big_brain/Alien_Big_Brain-4.png" id="5_hifjq"]
+[ext_resource type="Texture2D" uid="uid://cbbvy0h3ul40h" path="res://assets/big_brain/Alien_Big_Brain-5.png" id="6_62xin"]
+[ext_resource type="Texture2D" uid="uid://ueh2msvt24wv" path="res://assets/big_brain/Alien_Big_Brain-6.png" id="7_bce6k"]
+[ext_resource type="Texture2D" uid="uid://bvc2lnyi68p" path="res://assets/big_brain/Alien_Big_Brain-7.png" id="8_vtk3l"]
+[ext_resource type="Texture2D" uid="uid://biluab4qkdwve" path="res://assets/big_brain/Alien_Big_Brain-8.png" id="9_sa5ox"]
+[ext_resource type="Texture2D" uid="uid://cx1yf65a4ovl0" path="res://assets/big_brain/Alien_Big_Brain-9.png" id="10_50atp"]
+[ext_resource type="Texture2D" uid="uid://dj1iy6upoc3ln" path="res://assets/big_brain/Alien_Big_Brain-10.png" id="11_ewqk3"]
+[ext_resource type="Texture2D" uid="uid://ctvcarhohlmtq" path="res://assets/big_brain/Alien_Big_Brain-11.png" id="12_jeukt"]
+[ext_resource type="Texture2D" uid="uid://dxy114wrpmigq" path="res://assets/computer_hardware/CoolBackground.jpg" id="13_j2quj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_op8yi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_krk3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mhr7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_roluv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hifjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_62xin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bce6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vtk3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sa5ox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_50atp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ewqk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jeukt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fco8v"]
+size = Vector2(264, 143.5)
+
+[node name="Victory" type="Node2D"]
+script = ExtResource("1_7ujsa")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("1_hxqhj")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(579, 393)
+scale = Vector2(0.32727, 0.34375)
+sprite_frames = SubResource("SpriteFrames_op8yi")
+frame_progress = 0.539035
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(174, 97)
+shape = SubResource("RectangleShape2D_fco8v")
+
+[node name="CoolBackground" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.317647)
+show_behind_parent = true
+position = Vector2(576, 331)
+scale = Vector2(0.485762, 0.407674)
+texture = ExtResource("13_j2quj")
+
+[connection signal="frame_changed" from="CharacterBody2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bke2ysefgxomp" path="res://assets/meme_puzzle/p15.png" id="17_ac1ku"]
 [ext_resource type="Texture2D" uid="uid://bia3ucfga2tn1" path="res://assets/meme_puzzle/p16.png" id="18_2ttdt"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_x41w1")
 
 [node name="TextureRect" type="TextureRect" parent="."]

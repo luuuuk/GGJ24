@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfq1mfxt5wa4f"]
+
+[ext_resource type="Script" path="res://scripts/VideoStreamPlayer.gd" id="1_5lekr"]
+
+[node name="Thanks" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -11.0
+offset_top = -8.0
+offset_right = 1176.0
+offset_bottom = 667.0
+color = Color(0, 0, 0, 1)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+scale = Vector2(0.6, 0.6)
+expand = true
+script = ExtResource("1_5lekr")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 0

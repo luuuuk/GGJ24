@@ -12,7 +12,7 @@
 [ext_resource type="Script" path="res://scripts/logic_puzzle/output_lbl_gate.gd" id="11_f16yj"]
 [ext_resource type="PackedScene" uid="uid://cncu1nw7pdp3n" path="res://scenes/logic_puzzle/start_zone.tscn" id="12_521i2"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_m7l4y")
 
 [node name="TextureRect" type="TextureRect" parent="."]

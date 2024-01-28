@@ -16,4 +16,5 @@ const failureLines: Array[String] = [
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		if State.key_status == "has":
-				SceneSwitcher.switch_scene("res://scenes/teenRoom.tscn")
+			SceneSwitcher.switch_scene("res://scenes/teenRoom.tscn")
+	
