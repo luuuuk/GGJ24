@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://clkx8cjfrffvn"
+path="res://.godot/imported/planking.dialogue-1496ba4a8f5e8a48e2136986cd41e4c1.tres"
+
+[deps]
+
+source_file="res://dialogue/planking.dialogue"
+dest_files=["res://.godot/imported/planking.dialogue-1496ba4a8f5e8a48e2136986cd41e4c1.tres"]
+
+[params]
+
+defaults=true

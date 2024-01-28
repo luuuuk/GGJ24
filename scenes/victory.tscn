@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bi2w25ljpnp1v"]
+[gd_scene load_steps=16 format=3 uid="uid://bi2w25ljpnp1v"]
 
 [ext_resource type="Script" path="res://scripts/victory.gd" id="1_7ujsa"]
 [ext_resource type="Script" path="res://scripts/AudioStreamPlayer2DVictory.gd" id="1_hxqhj"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://cx1yf65a4ovl0" path="res://assets/big_brain/Alien_Big_Brain-9.png" id="10_50atp"]
 [ext_resource type="Texture2D" uid="uid://dj1iy6upoc3ln" path="res://assets/big_brain/Alien_Big_Brain-10.png" id="11_ewqk3"]
 [ext_resource type="Texture2D" uid="uid://ctvcarhohlmtq" path="res://assets/big_brain/Alien_Big_Brain-11.png" id="12_jeukt"]
-[ext_resource type="Texture2D" path="res://assets/computer_hardware/CoolBackground.jpg" id="13_j2quj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_op8yi"]
 animations = [{
@@ -82,6 +81,5 @@ modulate = Color(1, 1, 1, 0.317647)
 show_behind_parent = true
 position = Vector2(576, 331)
 scale = Vector2(0.485762, 0.407674)
-texture = ExtResource("13_j2quj")
 
 [connection signal="frame_changed" from="CharacterBody2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
