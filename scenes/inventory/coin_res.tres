@@ -7,5 +7,3 @@
 script = ExtResource("1_4cxbd")
 name = "coin"
 texture = ExtResource("2_xgrpe")
-description = Array[String](["A shiny piece of metal, in a circular shape.", "Seems to have undergone some pressure..."])
-pickUpLines = Array[String](["You find a small round object.", "It seems to be made of metal...", "Nice!"])

@@ -12,4 +12,4 @@ func _on_body_exited(body):
 func _process(delta):
 	if entered:
 		if Input.is_action_just_pressed("click"):
-			get_tree().change_scene_to_file("res://scenes/main.tscn")
+			SceneSwitcher.switch_scene("res://scenes/main.tscn")

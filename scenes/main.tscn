@@ -44,7 +44,7 @@ func _process(delta):
 "
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4yjg"]
-radius = 226.035
+radius = 419.03
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(787, 556)
@@ -243,8 +243,12 @@ map = NodePath("../../MapBody/TextureRect")
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("7_wg7mv")]
 
 [node name="DoortoTeen" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
 script = ExtResource("14_cbcea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoortoTeen"]
 position = Vector2(-2100, -403)
 shape = SubResource("CircleShape2D_g4yjg")
+
+[connection signal="body_entered" from="Door1" to="DoortoTeen" method="_on_door_1_body_entered"]

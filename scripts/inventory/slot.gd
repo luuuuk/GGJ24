@@ -34,6 +34,7 @@ func isEmpty():
 
 
 func _on_gui_input(event):
+	print("Has key? ", State.key_status)
 	if Input.is_action_just_pressed("rightClick"):
 		if itemStackGui:
 			if itemStackGui.inventorySlot:
