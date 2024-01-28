@@ -238,6 +238,7 @@ func _input(event):
 				#for label in get_tree().get_nodes_in_group("output_labels"):
 				#	label.bbcode_enabled = true
 				#	label.push_color(Color(0,1,0,1))
+				SceneSwitcher.switch_scene("res://scenes/main.tscn")
 					
 			find_on_top()
 			update_labels()
