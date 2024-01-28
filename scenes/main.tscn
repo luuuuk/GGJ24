@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://boan08aug2m4w"]
+[gd_scene load_steps=28 format=3 uid="uid://boan08aug2m4w"]
 
 [ext_resource type="Texture2D" uid="uid://dooxbk33phh61" path="res://assets/worldmap.png" id="1_8k05y"]
 [ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_50bgd"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://scripts/game_over/PotHole1.gd" id="15_73fmw"]
 [ext_resource type="Script" path="res://scripts/game_over/PotHole2.gd" id="16_o0mxc"]
 [ext_resource type="Script" path="res://scripts/game_over/PotHole3.gd" id="17_vm2m2"]
+[ext_resource type="Script" path="res://scripts/BGMusic.gd" id="18_2prqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jshdq"]
 size = Vector2(2780.62, 628)
@@ -289,6 +290,9 @@ script = ExtResource("17_vm2m2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PotHole3"]
 position = Vector2(10, -16)
 shape = SubResource("CircleShape2D_3qa53")
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("18_2prqw")
 
 [connection signal="body_entered" from="Door1" to="DoortoTeen" method="_on_door_1_body_entered"]
 [connection signal="body_entered" from="PotHole1" to="PotHole1" method="_on_body_entered"]
