@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://boan08aug2m4w"]
+[gd_scene load_steps=19 format=3 uid="uid://boan08aug2m4w"]
 
 [ext_resource type="Texture2D" uid="uid://dooxbk33phh61" path="res://assets/worldmap.png" id="1_8k05y"]
 [ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_50bgd"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://i20nqvxhig5g" path="res://assets/items/croissant_icon.png" id="7_yqgdg"]
 [ext_resource type="PackedScene" uid="uid://bny1ub117xpxu" path="res://scenes/Actionable.tscn" id="8_h7jx6"]
 [ext_resource type="Resource" uid="uid://bm4qjwyo2yugh" path="res://dialogue/lockedDoor.dialogue" id="9_aey6n"]
-[ext_resource type="Script" path="res://scripts/DoortoTeen.gd" id="14_cbcea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jshdq"]
 size = Vector2(2780.62, 628)
@@ -42,9 +41,6 @@ func _ready():
 func _process(delta):
 	pass
 "
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_g4yjg"]
-radius = 419.03
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(787, 556)
@@ -150,7 +146,8 @@ polygon = PackedVector2Array(-3099, -5083, -3199, -4895, -2903, -4827, -2743, -4
 polygon = PackedVector2Array(-2607, -4852, -2419, -5012, -2169, -5009, -2069, -4902, -2351, -4813)
 
 [node name="Actionable" parent="MapBody" instance=ExtResource("8_h7jx6")]
-position = Vector2(-1571, -972)
+position = Vector2(-978, -48)
+scale = Vector2(4.556, 2.576)
 dialogue_resource = ExtResource("3_bdywf")
 dialogue_start = "pick_key"
 
@@ -158,12 +155,12 @@ dialogue_start = "pick_key"
 position = Vector2(3, 0)
 shape = SubResource("CircleShape2D_vkcd3")
 
-[node name="ChangeLevelTrigger" parent="." instance=ExtResource("2_mbxwu")]
-position = Vector2(-2337, -2578)
-scale = Vector2(0.435, 0.435)
+[node name="GoToTeenRoom" parent="." instance=ExtResource("2_mbxwu")]
+position = Vector2(-1276, -59.0001)
+scale = Vector2(0.598261, 0.893375)
 
 [node name="Key" parent="." instance=ExtResource("5_ea2yu")]
-position = Vector2(-1567, -973)
+position = Vector2(-963, -49)
 scale = Vector2(1.885, 1.885)
 
 [node name="Coin" parent="." instance=ExtResource("6_ppy07")]
@@ -220,11 +217,13 @@ scale = Vector2(0.535, 0.535)
 itemRes = SubResource("Resource_x4jh0")
 
 [node name="Door1" parent="." instance=ExtResource("8_h7jx6")]
-position = Vector2(-2111, -383)
+position = Vector2(-1250, -56)
+scale = Vector2(-0.627687, 1.2218)
+collision_layer = 17
 dialogue_resource = ExtResource("9_aey6n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door1"]
-position = Vector2(4, -2)
+position = Vector2(-1.59314, -2.45539)
 shape = SubResource("CircleShape2D_d68aa")
 script = SubResource("GDScript_7dl4c")
 
@@ -242,13 +241,5 @@ map = NodePath("../../MapBody/TextureRect")
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("7_wg7mv")]
 
-[node name="DoortoTeen" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 0
-script = ExtResource("14_cbcea")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DoortoTeen"]
-position = Vector2(-2100, -403)
-shape = SubResource("CircleShape2D_g4yjg")
-
-[connection signal="body_entered" from="Door1" to="DoortoTeen" method="_on_door_1_body_entered"]
+[connection signal="body_entered" from="Door1" to="MapBody/Actionable" method="_on_door_1_body_entered"]
+[connection signal="body_exited" from="Door1" to="MapBody/Actionable" method="_on_door_1_body_exited"]
