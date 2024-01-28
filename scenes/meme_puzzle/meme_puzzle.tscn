@@ -1,0 +1,260 @@
+[gd_scene load_steps=20 format=3 uid="uid://1euy8ayq7cey"]
+
+[ext_resource type="Texture2D" uid="uid://fiah30d3tkjm" path="res://assets/background/CoolBackground2.svg" id="1_7vd67"]
+[ext_resource type="Script" path="res://scripts/meme_puzzle/meme_puzzle.gd" id="1_x41w1"]
+[ext_resource type="PackedScene" uid="uid://dh3mgg0leodw7" path="res://scenes/meme_puzzle/puzzle_piece.tscn" id="2_utoif"]
+[ext_resource type="Texture2D" uid="uid://b1e5d84fqkm3d" path="res://assets/meme_puzzle/p1.png" id="3_8wfj5"]
+[ext_resource type="Texture2D" uid="uid://dii1qpv6fcj34" path="res://assets/meme_puzzle/p3.png" id="4_324fk"]
+[ext_resource type="PackedScene" uid="uid://clyvhhl4s40tw" path="res://scenes/meme_puzzle/puzzle_drop_zone.tscn" id="5_2dutl"]
+[ext_resource type="Texture2D" uid="uid://c3k7g11nlfbrm" path="res://assets/meme_puzzle/p4.png" id="6_mn50m"]
+[ext_resource type="Texture2D" uid="uid://dtnpw5pna2cib" path="res://assets/meme_puzzle/p5.png" id="7_eede5"]
+[ext_resource type="Texture2D" uid="uid://d16vfqhg0ukyp" path="res://assets/meme_puzzle/p6.png" id="8_h38us"]
+[ext_resource type="Texture2D" uid="uid://dbw7m1wp2alvs" path="res://assets/meme_puzzle/p7.png" id="9_lgqn5"]
+[ext_resource type="Texture2D" uid="uid://ctg1fb86r57ch" path="res://assets/meme_puzzle/p8.png" id="10_256or"]
+[ext_resource type="Texture2D" uid="uid://b0bon85fb18qy" path="res://assets/meme_puzzle/p9.png" id="11_3iguu"]
+[ext_resource type="Texture2D" uid="uid://x8myyv0i8rl3" path="res://assets/meme_puzzle/p10.png" id="12_pagbg"]
+[ext_resource type="Texture2D" uid="uid://c6u7lw6ku5ttm" path="res://assets/meme_puzzle/p11.png" id="13_8hqu7"]
+[ext_resource type="Texture2D" uid="uid://dxk867lhj4t8r" path="res://assets/meme_puzzle/p12.png" id="14_n14at"]
+[ext_resource type="Texture2D" uid="uid://c7ouwcgy350rw" path="res://assets/meme_puzzle/p13.png" id="15_kfil7"]
+[ext_resource type="Texture2D" uid="uid://s42dyilt2mbv" path="res://assets/meme_puzzle/p14.png" id="16_xbdfo"]
+[ext_resource type="Texture2D" uid="uid://bke2ysefgxomp" path="res://assets/meme_puzzle/p15.png" id="17_ac1ku"]
+[ext_resource type="Texture2D" uid="uid://bia3ucfga2tn1" path="res://assets/meme_puzzle/p16.png" id="18_2ttdt"]
+
+[node name="Node2D2" type="Node2D"]
+script = ExtResource("1_x41w1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 648.0
+texture = ExtResource("1_7vd67")
+expand_mode = 5
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(797, 174)
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(469, 502)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(469, 174)
+
+[node name="p1" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(160, 150)
+
+[node name="P1" parent="p1" index="0"]
+texture = ExtResource("3_8wfj5")
+region_rect = Rect2(1534, 1536, 513, 511)
+
+[node name="p2" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(260, 150)
+
+[node name="p3" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(60, 150)
+
+[node name="P1" parent="p3" index="0"]
+texture = ExtResource("4_324fk")
+region_rect = Rect2(514, 1536, 511, 510)
+
+[node name="p4" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(60, 230)
+
+[node name="P1" parent="p4" index="0"]
+texture = ExtResource("6_mn50m")
+region_rect = Rect2(0, 1534, 512, 513)
+
+[node name="p5" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(120, 460)
+
+[node name="P1" parent="p5" index="0"]
+texture = ExtResource("7_eede5")
+region_rect = Rect2(1535, 1025, 513, 512)
+
+[node name="p6" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(120, 460)
+
+[node name="P1" parent="p6" index="0"]
+texture = ExtResource("8_h38us")
+region_rect = Rect2(1024, 1022, 510, 513)
+
+[node name="p7" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(120, 460)
+
+[node name="P1" parent="p7" index="0"]
+texture = ExtResource("9_lgqn5")
+region_rect = Rect2(514, 1025, 508, 509)
+
+[node name="p8" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(120, 460)
+
+[node name="P1" parent="p8" index="0"]
+texture = ExtResource("10_256or")
+region_rect = Rect2(0, 1025, 512, 510)
+
+[node name="p9" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(120, 460)
+
+[node name="P1" parent="p9" index="0"]
+texture = ExtResource("11_3iguu")
+region_rect = Rect2(1533, 515, 514, 508)
+
+[node name="p10" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(120, 460)
+
+[node name="P1" parent="p10" index="0"]
+texture = ExtResource("12_pagbg")
+region_rect = Rect2(1022, 514, 511, 512)
+
+[node name="p11" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(180, 690)
+
+[node name="P1" parent="p11" index="0"]
+texture = ExtResource("13_8hqu7")
+region_rect = Rect2(512, 515, 513, 510)
+
+[node name="p12" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(240, 920)
+
+[node name="P1" parent="p12" index="0"]
+texture = ExtResource("14_n14at")
+region_rect = Rect2(0, 515, 515, 509)
+
+[node name="p13" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(480, 1840)
+
+[node name="P1" parent="p13" index="0"]
+texture = ExtResource("15_kfil7")
+region_rect = Rect2(1537, 0, 510, 515)
+
+[node name="p14" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(480, 1840)
+
+[node name="P1" parent="p14" index="0"]
+texture = ExtResource("16_xbdfo")
+region_rect = Rect2(1026, 4, 506, 509)
+
+[node name="p15" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(480, 1840)
+
+[node name="P1" parent="p15" index="0"]
+texture = ExtResource("17_ac1ku")
+region_rect = Rect2(514, 1, 509, 512)
+
+[node name="p16" parent="." instance=ExtResource("2_utoif")]
+position = Vector2(720, 2760)
+
+[node name="P1" parent="p16" index="0"]
+texture = ExtResource("18_2ttdt")
+region_rect = Rect2(14, 0, 508, 516)
+
+[node name="start_zone1" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(67, 65)
+
+[node name="start_zone2" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="start_zone3" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(268, 260)
+
+[node name="start_zone4" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="start_zone5" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(268, 260)
+
+[node name="start_zone6" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="start_zone7" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(268, 260)
+
+[node name="start_zone8" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="start_zone9" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(268, 260)
+
+[node name="start_zone10" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="start_zone11" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(268, 260)
+
+[node name="start_zone12" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="start_zone13" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(268, 260)
+
+[node name="start_zone14" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="start_zone15" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(268, 260)
+
+[node name="start_zone16" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="end_zone1" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="end_zone2" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(268, 260)
+
+[node name="end_zone3" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(402, 390)
+
+[node name="end_zone4" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="end_zone5" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(268, 260)
+
+[node name="end_zone6" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="end_zone7" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(268, 260)
+
+[node name="end_zone8" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="end_zone9" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(268, 260)
+
+[node name="end_zone10" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="end_zone11" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(268, 260)
+
+[node name="end_zone12" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="end_zone13" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(268, 260)
+
+[node name="end_zone14" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[node name="end_zone15" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(268, 260)
+
+[node name="end_zone16" parent="." instance=ExtResource("5_2dutl")]
+position = Vector2(134, 130)
+
+[editable path="p1"]
+[editable path="p2"]
+[editable path="p3"]
+[editable path="p4"]
+[editable path="p5"]
+[editable path="p6"]
+[editable path="p7"]
+[editable path="p8"]
+[editable path="p9"]
+[editable path="p10"]
+[editable path="p11"]
+[editable path="p12"]
+[editable path="p13"]
+[editable path="p14"]
+[editable path="p15"]
+[editable path="p16"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxy114wrpmigq"
-path="res://.godot/imported/CoolBackground.jpg-e966bceb625781bef625a2d505b652eb.ctex"
+uid="uid://s42dyilt2mbv"
+path="res://.godot/imported/p14.png-be8e198d00e030ba1fc4d113392de543.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/computer_hardware/CoolBackground.jpg"
-dest_files=["res://.godot/imported/CoolBackground.jpg-e966bceb625781bef625a2d505b652eb.ctex"]
+source_file="res://assets/meme_puzzle/p14.png"
+dest_files=["res://.godot/imported/p14.png-be8e198d00e030ba1fc4d113392de543.ctex"]
 
 [params]
 

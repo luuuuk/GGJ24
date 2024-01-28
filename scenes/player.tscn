@@ -91,7 +91,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_spypp"]
-size = Vector2(7.98403, 16.8235)
+size = Vector2(17.3469, 26.1722)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_skei4"]
 size = Vector2(20.9138, 29.7651)
@@ -112,7 +112,7 @@ sprite_frames = SubResource("SpriteFrames_a4idp")
 animation = &"move_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.714285, 9.64285)
+position = Vector2(-3.57143, 15.7908)
 scale = Vector2(2.505, 2.505)
 shape = SubResource("RectangleShape2D_spypp")
 

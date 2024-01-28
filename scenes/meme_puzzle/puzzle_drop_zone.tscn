@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://clyvhhl4s40tw"]
+
+[ext_resource type="Script" path="res://scripts/meme_puzzle/puzzle_drop_zone.gd" id="1_2sc7t"]
+
+[node name="Marker2D" type="Marker2D" groups=["zones"]]
+script = ExtResource("1_2sc7t")

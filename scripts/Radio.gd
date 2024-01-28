@@ -12,6 +12,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/rickroll.dialogue"), "start")
-	await get_tree().create_timer(7.0).timeout
-	SceneSwitcher.switch_scene("res://scenes/game_over/game_over.tscn")
+	if body.is_in_group("Player"):
+		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/rickroll.dialogue"), "start")
+		await get_tree().create_timer(7.0).timeout
+		SceneSwitcher.switch_scene("res://scenes/game_over/game_over.tscn")

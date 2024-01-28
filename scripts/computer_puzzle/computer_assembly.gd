@@ -26,6 +26,7 @@ func _on_button_pressed():
 			
 	if correct_arrangement:
 		print("YES")
+		State.computer_solved = true
 		SceneSwitcher.switch_scene("res://scenes/teenRoom.tscn")
 	else:
 		print("NO")
