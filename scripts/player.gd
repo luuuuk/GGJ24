@@ -1,18 +1,13 @@
 extends CharacterBody2D
 
-const MAX_SPEED = 300
+const MAX_SPEED = 400
 
 var velocity_percent = Vector2.ZERO
-var acceleration = 30
+var acceleration = 40
 
 @onready var _animated_sprite = $AnimatedSprite2D
-
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
 @export var inventory: Inventory
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -40,5 +35,24 @@ func _process(delta):
 
 
 func _on_hurt_box_area_entered(area):
+	
 	if area.has_method("collect"):
 		area.collect(inventory)
+
+		#var itemSlots = inventory.slots.filter(func(slot): return slot.item)
+		#
+		#if !itemSlots.is_empty():
+			#var fullItems =  itemSlots.filter(func(slot): return slot.item.name == "croissant")
+			#if !fullItems.is_empty():
+				#DialogManager.startDialog(get_global_mouse_position(), ["I could've dropped my croissant!"])
+				
+				
+
+func _unhandled_input(event):
+	if Input.is_action_just_pressed("click"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
+
+

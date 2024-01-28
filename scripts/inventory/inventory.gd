@@ -19,6 +19,7 @@ func update():
 			itemStackGui = ItemStackGuiClass.instantiate()
 			slots[i].insert(itemStackGui)
 			
+			
 		itemStackGui.inventorySlot = inventorySlot
 		itemStackGui.update()
 
@@ -39,13 +40,6 @@ func connectSlots():
 		var callable = Callable(onSlotClicked)
 		callable = callable.bind(slot)
 		slot.pressed.connect(callable)
-
-
-func onInteractableClicked(interactable):
-	if itemInHand:
-		remove_child(itemInHand)
-		itemInHand = null
-		# slot.insert(item)
 
 
 func onSlotClicked(slot):

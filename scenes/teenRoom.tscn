@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://0sm02tmpwdi2"]
+
+[ext_resource type="Texture2D" uid="uid://cgqcv4a80ouu8" path="res://assets/teenRoomMap.png" id="1_hkl37"]
+[ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_7u85n"]
+[ext_resource type="Script" path="res://scripts/followCam.gd" id="3_0v6kx"]
+[ext_resource type="PackedScene" uid="uid://da5se2fpjfdm1" path="res://scenes/inventory/inventory.tscn" id="3_g5rl2"]
+[ext_resource type="Script" path="res://scripts/door2to1.gd" id="5_c7g76"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tm0ql"]
+size = Vector2(476, 51)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1eup"]
+radius = 200.202
+
+[node name="TeenRoom" type="Node2D"]
+
+[node name="Map" type="StaticBody2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Map"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_hkl37")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Map"]
+polygon = PackedVector2Array(1104, 1653, 1099, 1562, 192, 1539, 199, 423, 1061, 418, 1071, 657, 1462, 652, 1457, 415, 2059, 423, 2079, 856, 1804, 861, 1792, 1431, 2059, 1431, 2079, 1532, 1363, 1559, 1369, 1665, 2394, 1670, 2392, 2, 8, 0, -2, 1670)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Map"]
+position = Vector2(1229, 1653.5)
+shape = SubResource("RectangleShape2D_tm0ql")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map"]
+polygon = PackedVector2Array(790, 512, 792, 1225, 304, 1241, 267, 501)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Map"]
+polygon = PackedVector2Array(1601, 995, 1660, 1126, 1708, 1150, 1687, 1190, 1588, 1172, 1551, 1129)
+
+[node name="Player" parent="Map" instance=ExtResource("2_7u85n")]
+position = Vector2(1162, 979)
+scale = Vector2(5.155, 5.155)
+
+[node name="FollowCam" type="Camera2D" parent="Map/Player" node_paths=PackedStringArray("map")]
+zoom = Vector2(0.54, 0.54)
+limit_left = 0
+limit_top = 0
+script = ExtResource("3_0v6kx")
+map = NodePath("../../TextureRect")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("3_g5rl2")]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1160, 1001)
+script = ExtResource("5_c7g76")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(62, 595)
+shape = SubResource("CircleShape2D_s1eup")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

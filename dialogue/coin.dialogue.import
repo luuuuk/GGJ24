@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://epkhbm3d055k"
+path="res://.godot/imported/coin.dialogue-ba1bd744d06a8c88b791cabf7b637480.tres"
+
+[deps]
+
+source_file="res://dialogue/coin.dialogue"
+dest_files=["res://.godot/imported/coin.dialogue-ba1bd744d06a8c88b791cabf7b637480.tres"]
+
+[params]
+
+defaults=true

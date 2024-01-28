@@ -1,15 +1,50 @@
-[gd_scene load_steps=9 format=3 uid="uid://boan08aug2m4w"]
+[gd_scene load_steps=21 format=3 uid="uid://boan08aug2m4w"]
 
-[ext_resource type="Texture2D" uid="uid://j06q8vkoi4dr" path="res://assets/basemap.png" id="1_ilrd8"]
+[ext_resource type="Texture2D" uid="uid://dooxbk33phh61" path="res://assets/worldmap.png" id="1_8k05y"]
 [ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_50bgd"]
 [ext_resource type="PackedScene" uid="uid://bpnb2mdgos5dg" path="res://scenes/levelChangeTrigger.tscn" id="2_mbxwu"]
+[ext_resource type="Resource" uid="uid://dwer7oe6rcdkq" path="res://dialogue/key.dialogue" id="3_bdywf"]
 [ext_resource type="Script" path="res://scripts/followCam.gd" id="4_40gjk"]
 [ext_resource type="PackedScene" uid="uid://bobnnio6u4ain" path="res://scenes/items/key.tscn" id="5_ea2yu"]
+[ext_resource type="PackedScene" uid="uid://dykil5l1a53l2" path="res://scenes/items/croissant.tscn" id="5_uy1ij"]
+[ext_resource type="Script" path="res://scripts/inventory/inventoryItem.gd" id="6_pkixr"]
 [ext_resource type="PackedScene" uid="uid://c5vrrj4hsx1fg" path="res://scenes/items/coin.tscn" id="6_ppy07"]
 [ext_resource type="PackedScene" uid="uid://da5se2fpjfdm1" path="res://scenes/inventory/inventory.tscn" id="7_wg7mv"]
+[ext_resource type="Texture2D" uid="uid://i20nqvxhig5g" path="res://assets/items/croissant_icon.png" id="7_yqgdg"]
+[ext_resource type="PackedScene" uid="uid://bny1ub117xpxu" path="res://scenes/Actionable.tscn" id="8_h7jx6"]
+[ext_resource type="Resource" uid="uid://bm4qjwyo2yugh" path="res://dialogue/lockedDoor.dialogue" id="9_aey6n"]
+[ext_resource type="Script" path="res://scripts/DoortoTeen.gd" id="14_cbcea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jshdq"]
 size = Vector2(2780.62, 628)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vkcd3"]
+radius = 17.0294
+
+[sub_resource type="Resource" id="Resource_x4jh0"]
+script = ExtResource("6_pkixr")
+name = "croissant"
+texture = ExtResource("7_yqgdg")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d68aa"]
+radius = 127.318
+
+[sub_resource type="GDScript" id="GDScript_7dl4c"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4yjg"]
+radius = 419.03
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(787, 556)
@@ -22,15 +57,15 @@ offset_left = -7393.0
 offset_top = -11259.0
 offset_right = 907.0
 offset_bottom = 624.0
-texture = ExtResource("1_ilrd8")
+texture = ExtResource("1_8k05y")
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="MapBody"]
 position = Vector2(-7393, -11259)
-polygon = PackedVector2Array(8055, 9223, 8043, 9490, 7978, 9494, 7967, 9744, 7976.27, 9796.23, 8056, 9809, 8041, 9988, 6177, 9966, 6173, 10085, 5796, 10203, 5694, 10242, 5642, 10447, 5620, 10601, 5710, 10578, 5669, 10911, 4957, 10949, 5012, 10415, 5211, 10297, 5190, 10017, 4694, 10051, 4694, 9631, 4903, 9701, 4892, 9937, 5187, 9930, 5184, 9727, 5391, 9653, 5457, 9631, 5686, 9631, 5656, 9962, 6406, 9881, 6402, 9602, 5906, 9597, 5929, 8323, 6044.71, 8299.31, 6081, 8137, 6151, 8107, 6202, 8144, 6249, 8188, 6432, 8220, 6473, 8424, 6543, 8429, 6529, 9146, 6469, 9146, 6461, 9542, 6885, 9534, 6970, 9191, 7717, 9218, 7784, 9139, 7836, 9226)
+polygon = PackedVector2Array(8055, 9223, 8043, 9490, 7978, 9494, 7967, 9744, 7976.27, 9796.23, 8056, 9809, 8041, 9988, 6177, 9966, 6173, 10085, 5796, 10203, 5694, 10242, 5642, 10447, 5620, 10601, 5710, 10578, 5669, 10911, 5356, 10937, 5348, 10791, 5254, 10783, 5219.39, 10935, 4957, 10949, 5012, 10415, 5211, 10297, 5190, 10017, 4694, 10051, 4694, 9631, 4903, 9701, 4892, 9937, 5187, 9930, 5184, 9727, 5391, 9653, 5457, 9631, 5686, 9631, 5656, 9962, 6406, 9881, 6402, 9602, 5906, 9597, 5929, 8323, 6044.71, 8299.31, 6081, 8137, 6151, 8107, 6202, 8144, 6249, 8188, 6432, 8220, 6473, 8424, 6543, 8429, 6529, 9146, 6469, 9146, 6461, 9542, 6885, 9534, 6970, 9191, 7717, 9218, 7784, 9139, 7836, 9226)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MapBody"]
-polygon = PackedVector2Array(867, -10954, 863, -57, 845, 277, 930, 315, 911, 624, -7428, 625, -7357, -11248, 787, -11218, 1112, -11267, 487, -11408, -7569, -11399, -7660, 768, 1050, 768, 955, -11424, 955, -11424)
+polygon = PackedVector2Array(906, -5845, 863, -57, 845, 277, 930, 315, 911, 624, -7428, 625, -7374, -5209, 816, -5156, 1881, -5299, 487, -11408, -7569, -11399, -7660, 768, 1050, 768, 1179, -5571, 955, -11424)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="MapBody"]
 position = Vector2(-5300.31, 405)
@@ -61,53 +96,143 @@ polygon = PackedVector2Array(-2737, -3612, -2027, -3601, -2022, -3276, -2321, -3
 polygon = PackedVector2Array(-1883, -3580, -1872, -3361, -1696, -3260, -1600, -3356, -1691, -3580)
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="MapBody"]
-polygon = PackedVector2Array(-2746, 662, -2714, 376, -2530, 291, -2445, 184, -2340, 133, -2260, 51, -2128, 111, -2100, 214, -2057, 322, -1958, 342, -1881, 259, -1802, 237, -1736, 327, -1674, 319, -1507, 237, -1465, 126, -1412, 21, -1387, 30, -1346, 186, -1203, 153, -1153, 39, -1081, 70, -1128, 225, -1069, 286, -922, 195, -822, 169, -796, 96, -723, 103, -726, 196, -639, 144, -642, 32, -593, -1, -566, 132, -408, 129, -381, 39, -301, 55, -356, 178, -326, 202, -269, 79, -172, -15, 34, 51, 74, 124, 132, 97, 203, 141, 411, 307, 411, 644)
+polygon = PackedVector2Array(-2746, 662, -2714, 376, -2530, 291, -2445, 184, -2340, 133, -2260, 51, -2128, 111, -2100, 214, -2057, 322, -1958, 342, -1881, 259, -1802, 237, -1736, 327, -1674, 319, -1507, 237, -1465, 126, -1412, 21, -1387, 30, -1346, 186, -1203, 153, -1153, 39, -1081, 70, -1128, 225, -1069, 286, -922, 195, -822, 169, -796, 96, -723, 103, -726, 196, -639, 144, -607, 137, -581, 135, -566, 132, -408, 129, -393, 144, -366, 170, -356, 178, -326, 202, -224, 148, -165, 144, -15, 138, 74, 124, 132, 97, 203, 141, 411, 307, 411, 644)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(185, -4898, 201, -4532, -128, -4548, -128, -4135, 57, -4172, 219, -3980, 235, -3777, -824, -3774, -800, -4970)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-1225, -4778, -995, -4503, -971, -4303, -1142, -4244, -1161, -4052, -1091, -3873, -1198, -3713, -1815, -3753, -1850, -4543, -1623, -4629, -1673, -4722, -1844, -4685, -1836, -4954, -1700, -5056, -1364, -4754)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-7505, -17, -6864, 1, -6858, 648, -7452, 678)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-6666, -1623, -6768, -317, -5911, -293, -5797, -448, -5450, -442, -5318, -335, -4970, -263, -4785, -269, -4791, -508, -4880, -790, -5240, -1054, -5156, -1257, -4809, -1287, -4797, -1635, -4964, -1707, -5246, -1647)
+
+[node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-7487, -382, -6918, -364, -7026, -982, -7248, -1096, -7026, -1239, -7020, -1611, -7499, -1581)
+
+[node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-6473, -2985, -6473, -2569, -6181, -2589, -6229, -2393, -6505, -2273, -6481, -1937, -5957, -1913, -5901, -2117, -5909, -2373, -5833, -2365, -5773, -2141, -5325, -2101, -5549, -2281, -5517, -2597, -5649, -2737, -5325, -2765, -5321, -3097, -5845, -3125, -5909, -2773, -6077, -2777, -6093, -3045)
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-4792, -3059, -4821, -2462, -4561, -2315, -4843, -2088, -4818, -1947, -4368, -1933, -3935, -1899, -3667, -1916, -3254, -1947, -2957, -1930, -2943, -2218, -3149, -2349, -2920, -2431, -2951, -2614, -2917, -2733, -2937, -2880, -3132, -2821, -3155, -2623, -3177, -2490, -3291, -2815, -3537, -2815, -3709, -2583, -3967, -2213, -3998, -2399, -4314, -2397, -4382, -2626, -4357, -2937, -4167, -3039, -4501, -3172)
+
+[node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-3588, -3570, -3797, -3364, -3791, -3132, -3605, -3109, -3514, -3206, -3248, -3200, -3189, -3500, -3319, -3590)
+
+[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-7039, -3608, -7231, -3309, -6725, -3291, -6522, -3341, -6365, -3305, -5414, -3248, -5449, -3576, -5645, -3601, -6322, -3590, -6497, -3412, -6632, -3598)
+
+[node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-4341, -3352, -4344, -3601, -4651, -4050, -5004, -3997, -5014, -4253, -5267, -4460, -5157, -4770, -5014, -4859, -5200, -5087, -5314, -4884, -5389, -4481, -5520, -4310, -5520, -3922, -5235, -3640, -5132, -3712, -4911, -3662, -4915, -3398)
+
+[node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-7168, -4918, -7176, -4074, -7096, -3850, -6908, -3894, -6616, -3950, -6012, -3922, -5840, -4078, -5912, -4402, -6140, -4418, -6144, -4610, -5912, -4586, -5744, -4934, -5416, -5038, -5436, -5178, -5872, -5146, -5940, -4950, -6168, -4922, -6216, -4682, -6444, -4678, -6516, -4922, -6640, -4934, -6820, -5118)
+
+[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-3936, -4090, -3772, -3970, -3760, -3782, -3984, -3706, -4012, -3890)
+
+[node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-4756, -5014, -4780, -4370, -4200, -4318, -4080, -4574, -3752, -4574, -3484, -4642, -3428, -4958, -3580, -5030, -3976, -4974, -4312, -4958, -4468, -5114)
+
+[node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-3206, -4588, -3285, -4189, -3452, -3964, -3484, -3868, -3270, -3804, -2999, -3890, -3003, -4595)
+
+[node name="CollisionPolygon2D26" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-2401, -4602, -2714, -4474, -2704, -3922, -2273, -3922, -2219, -4428)
+
+[node name="CollisionPolygon2D27" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-3099, -5083, -3199, -4895, -2903, -4827, -2743, -4919, -2746, -5076)
+
+[node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="MapBody"]
+polygon = PackedVector2Array(-2607, -4852, -2419, -5012, -2169, -5009, -2069, -4902, -2351, -4813)
+
+[node name="Actionable" parent="MapBody" instance=ExtResource("8_h7jx6")]
+position = Vector2(-1571, -972)
+dialogue_resource = ExtResource("3_bdywf")
+dialogue_start = "pick_key"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapBody/Actionable"]
+position = Vector2(3, 0)
+shape = SubResource("CircleShape2D_vkcd3")
 
 [node name="ChangeLevelTrigger" parent="." instance=ExtResource("2_mbxwu")]
-position = Vector2(-2148, -2631)
+position = Vector2(-2337, -2578)
+scale = Vector2(0.435, 0.435)
 
 [node name="Key" parent="." instance=ExtResource("5_ea2yu")]
-position = Vector2(-1563, -970)
+position = Vector2(-1567, -973)
+scale = Vector2(1.885, 1.885)
 
 [node name="Coin" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(797, 522)
+scale = Vector2(1.575, 1.575)
 
 [node name="Coin2" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(832, 478)
+scale = Vector2(1.575, 1.575)
 
 [node name="Coin3" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(787, 483)
+scale = Vector2(1.575, 1.575)
 
 [node name="Coin4" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(752, 486)
+scale = Vector2(1.575, 1.575)
 
 [node name="Coin5" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(787, 442)
+scale = Vector2(1.575, 1.575)
 
 [node name="Coin6" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(742, 447)
+scale = Vector2(1.575, 1.575)
 
 [node name="Coin7" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(679, 523)
+scale = Vector2(1.575, 1.575)
 
 [node name="Coin8" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(714, 479)
+scale = Vector2(1.575, 1.575)
 
 [node name="Coin9" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(669, 484)
+scale = Vector2(1.575, 1.575)
 
 [node name="Coin10" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(639, 487)
+scale = Vector2(1.575, 1.575)
 
 [node name="Coin11" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(674, 443)
+scale = Vector2(1.575, 1.575)
 
 [node name="Coin12" parent="." instance=ExtResource("6_ppy07")]
 position = Vector2(629, 448)
+scale = Vector2(1.575, 1.575)
+
+[node name="croissant" parent="." instance=ExtResource("5_uy1ij")]
+position = Vector2(568, -811)
+scale = Vector2(0.535, 0.535)
+itemRes = SubResource("Resource_x4jh0")
+
+[node name="Door1" parent="." instance=ExtResource("8_h7jx6")]
+position = Vector2(-2111, -383)
+dialogue_resource = ExtResource("9_aey6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door1"]
+position = Vector2(4, -2)
+shape = SubResource("CircleShape2D_d68aa")
+script = SubResource("GDScript_7dl4c")
 
 [node name="Player" parent="." instance=ExtResource("2_50bgd")]
+scale = Vector2(2.425, 2.425)
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
+zoom = Vector2(0.54, 0.54)
 limit_left = 0
 limit_top = 0
 script = ExtResource("4_40gjk")
@@ -116,3 +241,14 @@ map = NodePath("../../MapBody/TextureRect")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("7_wg7mv")]
+
+[node name="DoortoTeen" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("14_cbcea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoortoTeen"]
+position = Vector2(-2100, -403)
+shape = SubResource("CircleShape2D_g4yjg")
+
+[connection signal="body_entered" from="Door1" to="DoortoTeen" method="_on_door_1_body_entered"]

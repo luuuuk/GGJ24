@@ -1,16 +1,22 @@
 extends Area2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@onready var inventory: Inventory = preload("res://scenes/inventory/playerInventory.tres")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+const successLines: Array[String] = [
+	"You seem to have acquired the necessary equipment...",
+	"This key grants you access to the house!"
+]
 
+const failureLines: Array[String] = [
+	"Looks like the door is locked...",
+	"Maybe you can find a way to unlock it!"
+]
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
-		get_tree().change_scene_to_file("res://scenes/computer_puzzle/computer_assembly.tscn")
+		var itemSlots = inventory.slots.filter(func(slot): return slot.item)
+		if !itemSlots.is_empty():
+			var fullItems =  itemSlots.filter(func(slot): return slot.item.name == "key")
+			if !fullItems.is_empty():
+				get_tree().change_scene_to_file("res://scenes/computer_puzzle/computer_assembly.tscn")

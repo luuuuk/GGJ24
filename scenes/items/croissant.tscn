@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dykil5l1a53l2"]
+
+[ext_resource type="PackedScene" uid="uid://dp11fpeekoxc7" path="res://scenes/items/collectable.tscn" id="1_ns2ur"]
+[ext_resource type="Script" path="res://scripts/inventory/inventoryItem.gd" id="2_e82f8"]
+[ext_resource type="Texture2D" uid="uid://bhx0lw20ffnvl" path="res://assets/items/croissant.png" id="3_goph6"]
+
+[sub_resource type="Resource" id="Resource_hr3ps"]
+script = ExtResource("2_e82f8")
+name = "croissant"
+texture = ExtResource("3_goph6")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdp1l"]
+resource_local_to_scene = true
+size = Vector2(114, 49)
+
+[node name="croissant" instance=ExtResource("1_ns2ur")]
+scale = Vector2(-0.015, -0.015)
+itemRes = SubResource("Resource_hr3ps")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_cdp1l")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("3_goph6")

@@ -31,3 +31,18 @@ func takeItem():
 
 func isEmpty():
 	return !itemStackGui
+
+
+func _on_gui_input(event):
+	print("Has key? ", State.key_status)
+	if Input.is_action_just_pressed("rightClick"):
+		if itemStackGui:
+			if itemStackGui.inventorySlot:
+				if itemStackGui.inventorySlot.item.name == "croissant":
+					DialogueManager.show_example_dialogue_balloon(load("res://dialogue/croissantFind.dialogue"), "start")
+				elif itemStackGui.inventorySlot.item.name == "key":
+					State.key_status = "has"
+					DialogueManager.show_example_dialogue_balloon(load("res://dialogue/key.dialogue"), "start")
+				elif itemStackGui.inventorySlot.item.name == "coin":
+					DialogueManager.show_example_dialogue_balloon(load("res://dialogue/coin.dialogue"), "start")
+		
