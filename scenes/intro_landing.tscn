@@ -1,0 +1,103 @@
+[gd_scene load_steps=21 format=3 uid="uid://ur66ghhnttbx"]
+
+[ext_resource type="Script" path="res://scripts/intro_landing.gd" id="1_6wxy0"]
+[ext_resource type="Texture2D" uid="uid://6fhnn8xyyyva" path="res://assets/landing_scene/Landing_Scene-1.png" id="1_cvulo"]
+[ext_resource type="Texture2D" uid="uid://dbd7ch56y6qvs" path="res://assets/landing_scene/Landing_Scene-2.png" id="2_8fetp"]
+[ext_resource type="Texture2D" uid="uid://bg40cr80uhy05" path="res://assets/landing_scene/Landing_Scene-3.png" id="3_22drk"]
+[ext_resource type="Texture2D" uid="uid://bq34g4731u05k" path="res://assets/landing_scene/Landing_Scene-4.png" id="4_1sf4h"]
+[ext_resource type="Texture2D" uid="uid://cvvjb24jsmgpv" path="res://assets/landing_scene/Landing_Scene-5.png" id="6_6nffs"]
+[ext_resource type="Texture2D" uid="uid://dy33ac01sufwp" path="res://assets/landing_scene/Landing_Scene-6.png" id="7_aie23"]
+[ext_resource type="Texture2D" uid="uid://50b4dx0fy4fe" path="res://assets/landing_scene/Landing_Scene-7.png" id="8_6f8jl"]
+[ext_resource type="Texture2D" uid="uid://4jir3s3vpvyg" path="res://assets/landing_scene/Landing_Scene-8.png" id="9_l6dxs"]
+[ext_resource type="Texture2D" uid="uid://54god3l0tesu" path="res://assets/landing_scene/Landing_Scene-9.png" id="10_lutt2"]
+[ext_resource type="Texture2D" uid="uid://e7uin7o31vbj" path="res://assets/landing_scene/Landing_Scene-10.png" id="11_tlils"]
+[ext_resource type="Texture2D" uid="uid://ccfat15v4qb6a" path="res://assets/landing_scene/Landing_Scene-11.png" id="12_a0dbr"]
+[ext_resource type="Texture2D" uid="uid://b7o3y5tgsiwgb" path="res://assets/landing_scene/Landing_Scene-12.png" id="13_d1dex"]
+[ext_resource type="Texture2D" uid="uid://bfey5cfxecrwr" path="res://assets/landing_scene/Landing_Scene-13.png" id="14_ejjmo"]
+[ext_resource type="Texture2D" uid="uid://dpmxciyokfqay" path="res://assets/landing_scene/Landing_Scene-14.png" id="15_wg1vs"]
+[ext_resource type="Texture2D" uid="uid://ca4fk5o5nmrsr" path="res://assets/landing_scene/Landing_Scene-15.png" id="16_dl30i"]
+[ext_resource type="Texture2D" uid="uid://chs28a3tf2khr" path="res://assets/landing_scene/Landing_Scene-16.png" id="17_fqk23"]
+[ext_resource type="Texture2D" uid="uid://c5jeexotot0oo" path="res://assets/landing_scene/Landing_Scene-17.png" id="18_whnu6"]
+[ext_resource type="Texture2D" uid="uid://xlxj07ss0vrn" path="res://assets/landing_scene/Landing_Scene-18.png" id="19_aq4s4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lpjjw"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("1_cvulo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8fetp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_22drk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1sf4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6nffs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aie23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6f8jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l6dxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lutt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tlils")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a0dbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_d1dex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ejjmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wg1vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_dl30i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fqk23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_whnu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_aq4s4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D3" type="Node2D"]
+script = ExtResource("1_6wxy0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -12.0
+offset_top = -16.0
+offset_right = 1166.0
+offset_bottom = 705.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(613, 324)
+scale = Vector2(0.319, 0.319)
+sprite_frames = SubResource("SpriteFrames_lpjjw")
+speed_scale = 2.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

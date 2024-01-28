@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq73yr2mdteoc"
-path="res://.godot/imported/blueprint_background.png-6b32096387f2a741c50b662504318627.ctex"
+uid="uid://dpmxciyokfqay"
+path="res://.godot/imported/Landing_Scene-14.png-3c174f543e99584e588c7f47f6975c54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/blueprint_background.png"
-dest_files=["res://.godot/imported/blueprint_background.png-6b32096387f2a741c50b662504318627.ctex"]
+source_file="res://assets/landing_scene/Landing_Scene-14.png"
+dest_files=["res://.godot/imported/Landing_Scene-14.png-3c174f543e99584e588c7f47f6975c54.ctex"]
 
 [params]
 

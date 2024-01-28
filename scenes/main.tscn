@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://boan08aug2m4w"]
+[gd_scene load_steps=30 format=3 uid="uid://boan08aug2m4w"]
 
 [ext_resource type="Texture2D" uid="uid://dooxbk33phh61" path="res://assets/worldmap.png" id="1_8k05y"]
 [ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_50bgd"]
@@ -6,18 +6,19 @@
 [ext_resource type="Resource" uid="uid://dwer7oe6rcdkq" path="res://dialogue/key.dialogue" id="3_bdywf"]
 [ext_resource type="Script" path="res://scripts/followCam.gd" id="4_40gjk"]
 [ext_resource type="PackedScene" uid="uid://bobnnio6u4ain" path="res://scenes/items/key.tscn" id="5_ea2yu"]
-[ext_resource type="PackedScene" path="res://scenes/items/croissant.tscn" id="5_uy1ij"]
+[ext_resource type="PackedScene" uid="uid://dykil5l1a53l2" path="res://scenes/items/croissant.tscn" id="5_uy1ij"]
 [ext_resource type="Script" path="res://scripts/inventory/inventoryItem.gd" id="6_pkixr"]
 [ext_resource type="PackedScene" uid="uid://c5vrrj4hsx1fg" path="res://scenes/items/coin.tscn" id="6_ppy07"]
 [ext_resource type="PackedScene" uid="uid://da5se2fpjfdm1" path="res://scenes/inventory/inventory.tscn" id="7_wg7mv"]
 [ext_resource type="Texture2D" uid="uid://i20nqvxhig5g" path="res://assets/items/croissant_icon.png" id="7_yqgdg"]
-[ext_resource type="PackedScene" path="res://scenes/Actionable.tscn" id="8_h7jx6"]
+[ext_resource type="PackedScene" uid="uid://bny1ub117xpxu" path="res://scenes/Actionable.tscn" id="8_h7jx6"]
 [ext_resource type="Resource" uid="uid://bm4qjwyo2yugh" path="res://dialogue/lockedDoor.dialogue" id="9_aey6n"]
 [ext_resource type="Script" path="res://scripts/LogicGatesRiddle.gd" id="14_wd64b"]
 [ext_resource type="Script" path="res://scripts/game_over/PotHole1.gd" id="15_73fmw"]
 [ext_resource type="Script" path="res://scripts/game_over/PotHole2.gd" id="16_o0mxc"]
 [ext_resource type="Script" path="res://scripts/game_over/PotHole3.gd" id="17_vm2m2"]
 [ext_resource type="Script" path="res://scripts/BGMusic.gd" id="18_2prqw"]
+[ext_resource type="Script" path="res://scripts/Arcade.gd" id="19_rkb1l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jshdq"]
 size = Vector2(2780.62, 628)
@@ -59,7 +60,10 @@ radius = 153.029
 [sub_resource type="CircleShape2D" id="CircleShape2D_3qa53"]
 radius = 192.128
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hy7ij"]
+radius = 159.113
+
+[node name="Node2D2" type="Node2D"]
 position = Vector2(787, 556)
 
 [node name="MapBody" type="StaticBody2D" parent="."]
@@ -245,6 +249,7 @@ shape = SubResource("CircleShape2D_d68aa")
 script = SubResource("GDScript_7dl4c")
 
 [node name="Player" parent="." instance=ExtResource("2_50bgd")]
+position = Vector2(87, -52)
 scale = Vector2(2.425, 2.425)
 
 [node name="FollowCam" type="Camera2D" parent="Player" node_paths=PackedStringArray("map")]
@@ -296,9 +301,17 @@ shape = SubResource("CircleShape2D_3qa53")
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 script = ExtResource("18_2prqw")
 
+[node name="Arcade" type="Area2D" parent="."]
+position = Vector2(-4525, -4352)
+script = ExtResource("19_rkb1l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arcade"]
+shape = SubResource("CircleShape2D_hy7ij")
+
 [connection signal="body_entered" from="Door1" to="MapBody/Actionable" method="_on_door_1_body_entered"]
 [connection signal="body_exited" from="Door1" to="MapBody/Actionable" method="_on_door_1_body_exited"]
 [connection signal="body_entered" from="LogicGatesRiddle" to="LogicGatesRiddle" method="_on_body_entered"]
 [connection signal="body_entered" from="PotHole1" to="PotHole1" method="_on_body_entered"]
 [connection signal="body_entered" from="PotHole2" to="PotHole2" method="_on_body_entered"]
 [connection signal="body_entered" from="PotHole3" to="PotHole3" method="_on_body_entered"]
+[connection signal="body_entered" from="Arcade" to="Arcade" method="_on_body_entered"]
