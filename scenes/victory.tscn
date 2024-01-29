@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cx1yf65a4ovl0" path="res://assets/big_brain/Alien_Big_Brain-9.png" id="10_50atp"]
 [ext_resource type="Texture2D" uid="uid://dj1iy6upoc3ln" path="res://assets/big_brain/Alien_Big_Brain-10.png" id="11_ewqk3"]
 [ext_resource type="Texture2D" uid="uid://ctvcarhohlmtq" path="res://assets/big_brain/Alien_Big_Brain-11.png" id="12_jeukt"]
-[ext_resource type="Texture2D" uid="uid://dxy114wrpmigq" path="res://assets/computer_hardware/CoolBackground.jpg" id="13_j2quj"]
+[ext_resource type="Texture2D" uid="uid://dxy114wrpmigq" path="res://assets/background/CoolBackground.jpg" id="14_tio1q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_op8yi"]
 animations = [{
@@ -51,7 +51,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_jeukt")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
@@ -77,11 +77,12 @@ frame_progress = 0.539035
 position = Vector2(174, 97)
 shape = SubResource("RectangleShape2D_fco8v")
 
-[node name="CoolBackground" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.317647)
+[node name="CoolBackground2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.447059)
 show_behind_parent = true
-position = Vector2(576, 331)
-scale = Vector2(0.485762, 0.407674)
-texture = ExtResource("13_j2quj")
+position = Vector2(581, 339.5)
+scale = Vector2(0.492462, 0.427458)
+texture = ExtResource("14_tio1q")
 
+[connection signal="animation_finished" from="CharacterBody2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="CharacterBody2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

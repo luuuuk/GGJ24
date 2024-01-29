@@ -1,5 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://boan08aug2m4w"]
-
+[gd_scene load_steps=38 format=3 uid="uid://boan08aug2m4w"]
 
 [ext_resource type="Texture2D" uid="uid://dooxbk33phh61" path="res://assets/worldmap.png" id="1_8k05y"]
 [ext_resource type="PackedScene" uid="uid://bwyaqunyedsv" path="res://scenes/player.tscn" id="2_50bgd"]
@@ -7,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://dwer7oe6rcdkq" path="res://dialogue/key.dialogue" id="3_bdywf"]
 [ext_resource type="Script" path="res://scripts/followCam.gd" id="4_40gjk"]
 [ext_resource type="PackedScene" uid="uid://bobnnio6u4ain" path="res://scenes/items/key.tscn" id="5_ea2yu"]
-[ext_resource type="PackedScene" uid="uid://dykil5l1a53l2" path="res://scenes/items/croissant.tscn" id="5_uy1ij"]
+[ext_resource type="PackedScene" path="res://scenes/items/croissant.tscn" id="5_uy1ij"]
 [ext_resource type="Script" path="res://scripts/inventory/inventoryItem.gd" id="6_pkixr"]
 [ext_resource type="PackedScene" uid="uid://c5vrrj4hsx1fg" path="res://scenes/items/coin.tscn" id="6_ppy07"]
 [ext_resource type="PackedScene" uid="uid://da5se2fpjfdm1" path="res://scenes/inventory/inventory.tscn" id="7_wg7mv"]
@@ -19,11 +18,13 @@
 [ext_resource type="Script" path="res://scripts/game_over/PotHole2.gd" id="16_o0mxc"]
 [ext_resource type="Script" path="res://scripts/game_over/PotHole3.gd" id="17_vm2m2"]
 [ext_resource type="Script" path="res://scripts/BGMusic.gd" id="18_2prqw"]
+[ext_resource type="Script" path="res://scripts/Dabbing.gd" id="19_5sxop"]
 [ext_resource type="Texture2D" uid="uid://cf4v4a2mxxsq3" path="res://assets/skeletons/SkeletonDab.png" id="19_o41dt"]
+[ext_resource type="Script" path="res://scripts/Arcade.gd" id="19_rkb1l"]
 [ext_resource type="Texture2D" uid="uid://5aobrg8op8nn" path="res://assets/skeletons/SkeletonMoustache.png" id="20_280q5"]
 [ext_resource type="Texture2D" uid="uid://cdnw1kjksltkn" path="res://assets/skeletons/SkeletonGrimaceShake.png" id="21_kd2yv"]
+[ext_resource type="Script" path="res://scripts/Planking.gd" id="22_iy6s3"]
 [ext_resource type="Texture2D" uid="uid://cl002mlgyie7u" path="res://assets/skeletons/SkeletonPlanking.png" id="22_llhgq"]
-[ext_resource type="Script" path="res://scripts/Arcade.gd" id="19_rkb1l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jshdq"]
 size = Vector2(2780.62, 628)
@@ -65,10 +66,16 @@ radius = 153.029
 [sub_resource type="CircleShape2D" id="CircleShape2D_3qa53"]
 radius = 192.128
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcwut"]
+size = Vector2(1414.63, 2337.9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibykt"]
+size = Vector2(2138.15, 1049.48)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_hy7ij"]
 radius = 159.113
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 position = Vector2(787, 556)
 
 [node name="MapBody" type="StaticBody2D" parent="."]
@@ -306,13 +313,23 @@ shape = SubResource("CircleShape2D_3qa53")
 [node name="BGMusic" type="AudioStreamPlayer2D" parent="."]
 script = ExtResource("18_2prqw")
 
+[node name="Dabbing" type="Area2D" parent="."]
+position = Vector2(-4779, -2280)
+scale = Vector2(0.051259, 0.0598827)
+script = ExtResource("19_5sxop")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dabbing"]
+position = Vector2(-19.5101, -33.3976)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_gcwut")
+
 [node name="SkeletonDab" type="Sprite2D" parent="."]
-position = Vector2(-4785.75, -1985.5)
+position = Vector2(-4779, -2280)
 scale = Vector2(0.051259, 0.0598827)
 texture = ExtResource("19_o41dt")
 
 [node name="SkeletonMoustache" type="Sprite2D" parent="."]
-position = Vector2(-1749, -3834)
+position = Vector2(-1880, -3834)
 scale = Vector2(0.057554, 0.0690955)
 texture = ExtResource("20_280q5")
 
@@ -321,8 +338,18 @@ position = Vector2(-5178, -3581)
 scale = Vector2(0.0587532, 0.0521357)
 texture = ExtResource("21_kd2yv")
 
-[node name="SkeletonPlanking" type="Sprite2D" parent="."]
+[node name="Planking" type="Area2D" parent="."]
 position = Vector2(-799.25, -1821.5)
+scale = Vector2(0.0479482, 0.0413669)
+collision_layer = 0
+script = ExtResource("22_iy6s3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planking"]
+position = Vector2(318.052, -326.349)
+shape = SubResource("RectangleShape2D_ibykt")
+
+[node name="SkeletonPlanking" type="Sprite2D" parent="."]
+position = Vector2(-782, -1829)
 scale = Vector2(0.0479482, 0.0413669)
 texture = ExtResource("22_llhgq")
 
@@ -339,4 +366,6 @@ shape = SubResource("CircleShape2D_hy7ij")
 [connection signal="body_entered" from="PotHole1" to="PotHole1" method="_on_body_entered"]
 [connection signal="body_entered" from="PotHole2" to="PotHole2" method="_on_body_entered"]
 [connection signal="body_entered" from="PotHole3" to="PotHole3" method="_on_body_entered"]
+[connection signal="body_entered" from="Dabbing" to="Dabbing" method="_on_body_entered"]
+[connection signal="body_entered" from="Planking" to="Planking" method="_on_body_entered"]
 [connection signal="body_entered" from="Arcade" to="Arcade" method="_on_body_entered"]
